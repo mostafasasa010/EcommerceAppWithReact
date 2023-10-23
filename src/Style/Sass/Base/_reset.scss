@@ -1,0 +1,23 @@
+// Reset Elements
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--main-family);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button,
+input,
+textarea {
+  font-family: var(--main-family);
+}

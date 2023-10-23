@@ -1,0 +1,17 @@
+// Config Files
+@import "Sass/Config/vars";
+@import "Sass/Config/mixinsMedia";
+
+// Base Files
+@import "Sass/Base/reset";
+@import "Sass/Base/edit";
+
+// Components Files
+@import "Sass/Components/logo";
+
+// Layout Files
+@import "Sass/Layout/header";
+@import "Sass/Layout/footer";
+
+// Pages Files
+@import "Sass/Pages/homePage";

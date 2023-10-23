@@ -1,0 +1,96 @@
+// Google Font
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+// Variables
+:root {
+  /* ------------------------------------------ */
+  // Fonts
+  // Font Size
+  --small-size: 0.875rem; // 14px
+  --medium-size: 1rem; // 16px
+  --medium-extra-size: 1.125rem; // 18px
+  --big-light-size: 1.25rem; // 20px
+  --big-size: 1.5rem; // 24px
+  --big-extra-size: 1.75rem; // 28px
+  --biggest-light-size: 2rem; // 32px
+  --biggest-size: 2.375rem; // 38px
+  --biggest-extra-size: 3rem; // 48px
+  // Font Weight
+  --light-weight: 200;
+  --light-extra-weight: 300;
+  --normal-weight: 400;
+  --normal-extra-weight: 500;
+  --bold-weight: 600;
+  --bold-extra-weight: 800;
+  // Font Family
+  --main-family: "Public Sans";
+  /* ------------------------------------------ */
+  // Colors
+  // Gray Colors
+  --gray-900: #191c1f;
+  --gray-800: #303639;
+  --gray-700: #475156;
+  --gray-600: #5f6c72;
+  --gray-500: #77878f;
+  --gray-400: #929fa5;
+  --gray-300: #adb7bc;
+  --gray-200: #c9cfd2;
+  --gray-100: #e4e7e9;
+  --gray-50: #f2f4f5;
+  --gray-00: #fff;
+  // Primary Colors
+  --primary-900: #331b0a;
+  --primary-800: #663514;
+  --primary-700: #99501f;
+  --primary-600: #de732d;
+  --primary-500: #fa8232;
+  --primary-400: #ff9d5c;
+  --primary-300: #ffb685;
+  --primary-200: #ffcead;
+  --primary-100: #ffe7d6;
+  --primary-50: #fff3eb;
+  // Secondary Colors
+  --secondary-900: #092131;
+  --secondary-800: #124261;
+  --secondary-700: #1b6392;
+  --secondary-600: #2484c2;
+  --secondary-500: #2da5f3;
+  --secondary-400: #57b7f5;
+  --secondary-300: #81c9f8;
+  --secondary-200: #abdbfa;
+  --secondary-100: #d5edfd;
+  --secondary-50: #eaf6fe;
+  // Success Colors
+  --success-900: #092407;
+  --success-800: #12470e;
+  --success-700: #1b6b16;
+  --success-600: #248e1d;
+  --success-500: #2db224;
+  --success-400: #57c150;
+  --success-300: #81d17c;
+  --success-200: #abe0a7;
+  --success-100: #d5f0d3;
+  --success-50: #eaf7e9;
+  // Warning Colors
+  --warning-900: #2f2802;
+  --warning-800: #5e5005;
+  --warning-700: #8d7807;
+  --warning-600: #bca00a;
+  --warning-500: #ebc80c;
+  --warning-400: #efd33d;
+  --warning-300: #f3de6d;
+  --warning-200: #f7e99e;
+  --warning-100: #fbf4ce;
+  --warning-50: #fdfae7;
+  // Danger Colors
+  --danger-900: #301212;
+  --danger-800: #5f2323;
+  --danger-700: #8f3535;
+  --danger-600: #be4646;
+  --danger-500: #ee5858;
+  --danger-400: #f17979;
+  --danger-300: #f59b9b;
+  --danger-200: #f8bcbc;
+  --danger-100: #fcdede;
+  --danger-50: #fdeeee;
+  /* ------------------------------------------ */
+}
