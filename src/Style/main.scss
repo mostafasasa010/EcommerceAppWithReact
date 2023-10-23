@@ -12,8 +12,12 @@
 
 // Layout Files
 @import "Sass/Layout/container";
+@import "Sass/Layout/topHeader";
 @import "Sass/Layout/header";
 @import "Sass/Layout/footer";
 
 // Pages Files
 @import "Sass/Pages/homePage";
+@import "Sass/Pages/cartPage";
+@import "Sass/Pages/favPage";
+@import "Sass/Pages/userPage";
