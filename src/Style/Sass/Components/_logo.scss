@@ -1,0 +1,17 @@
+// Logo Header Components
+header.main-header .logo {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 10px;
+    @include small {
+      margin-right: 5px;
+    }
+  }
+  h1 {
+    color: var(--gray-00);
+    @include small {
+      font-size: var(--big-light-size);
+    }
+  }
+}

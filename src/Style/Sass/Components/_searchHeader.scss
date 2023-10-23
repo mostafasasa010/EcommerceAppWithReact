@@ -1,0 +1,40 @@
+header.main-header .search-header {
+  position: relative;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include large {
+    width: 300px;
+  }
+  @include small {
+    display: none;
+  }
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: var(--medium-extra-size);
+    font-family: var(--main-family);
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background-color: var(--gray-00);
+    &::placeholder {
+      color: var(--gray-500);
+    }
+  }
+  > i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: var(--big-light-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--bold-weight);
+    color: var(--secondary-700);
+    transform: translateY(-50%);
+  }
+}
