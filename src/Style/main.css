@@ -229,6 +229,11 @@ header.main-header .search-header > i {
     margin-bottom: 4px;
   }
 }
+.top-header .container > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .top-header .container > div > div span {
   margin-right: 8px;
 }
@@ -249,9 +254,6 @@ header.main-header {
   display: flex;
   align-items: center;
   background-color: var(--secondary-700);
-  -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.75);
   margin-top: 40px;
   z-index: 1000;
 }
@@ -300,6 +302,52 @@ header.main-header .container > div .right a > i {
   display: block;
   font-size: var(--big-size);
   color: var(--gray-00);
+}
+
+.sign-up {
+  margin-top: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-up form {
+  width: 350px;
+  padding: 20px;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--gray-100);
+  border-radius: 4px;
+}
+.sign-up form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sign-up form > div {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.sign-up form > div label {
+  font-size: var(--small-size);
+  margin-bottom: 5px;
+  font-weight: var(--normal-extra-weight);
+}
+.sign-up form > div input {
+  border-radius: 2px;
+  border: 1px solid var(--gray-100);
+  outline: none;
+  padding: 12px 15px;
+}
+.sign-up form button {
+  border: none;
+  padding: 15px 20px;
+  background-color: var(--primary-500);
+  color: var(--gray-00);
+  cursor: pointer;
+  width: 100%;
+  border-radius: 2px;
+  font-size: var(--big-light-size);
+  font-weight: var(--bold-weight);
 }
 
 .cart-page {
