@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../../Components/Website/Header/Header";
 import TopHeader from "../../../Components/Website/Header/TopHeader";
 import axios from "axios";
@@ -7,22 +7,35 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
   const [cPassword, setcPassword] = useState("");
+  const [err, setErr] = useState(false);
+  const [send, setSend] = useState(false);
+  const [errEmail, setErrEmail] = useState("");
+  useEffect(() => {
+    if (name.length > 1 && password.length > 7 && cPassword === password) {
+      setSend(true);
+    } else {
+      setSend(false);
+    }
+  }, [cPassword, err, name.length, password]);
   async function handleSubmit(e) {
     e.preventDefault();
+    setErr(true);
     const data = {
       name: name,
       email: email,
       password: password,
       passwordConfirm: cPassword,
     };
-    try {
-      const res = await axios.post(
-        "https://e-commerce-l194.onrender.com/api/v1/user/signUp",
-        data
-      );
-      console.log(res);
-    } catch (err) {
-      console.log(err.config.data);
+    if (send) {
+      try {
+        const res = await axios.post(
+          "https://e-commerce-l194.onrender.com/api/v1/user/signUp",
+          data
+        );
+        console.log(res);
+      } catch (err) {
+        setErrEmail(err.response.data.message);
+      }
     }
   }
   return (
@@ -39,6 +52,9 @@ function SignUp() {
               id="name"
               onChange={(e) => setName(e.target.value)}
             />
+            {name.length < 2 && err && (
+              <p>User Name Must Be Larger Than 1 Character</p>
+            )}
           </div>
           <div>
             <label htmlFor="email">Email</label>
@@ -47,6 +63,8 @@ function SignUp() {
               id="email"
               onChange={(e) => setEmail(e.target.value)}
             />
+            {email === "" && err && <p>You Must Enter Your Email</p>}
+            {errEmail && <p>{errEmail}</p>}
           </div>
           <div>
             <label htmlFor="password">Password</label>
@@ -55,6 +73,9 @@ function SignUp() {
               id="password"
               onChange={(e) => setpassword(e.target.value)}
             />
+            {password < 8 && err && (
+              <p>Password Must Be Larger Than 7 Character</p>
+            )}
           </div>
           <div>
             <label htmlFor="Cpassword">Confirm Password</label>
@@ -63,6 +84,7 @@ function SignUp() {
               id="Cpassword"
               onChange={(e) => setcPassword(e.target.value)}
             />
+            {password !== cPassword && err && <p>Password Is Not Match</p>}
           </div>
           <button type="submit">Sign Up</button>
         </form>
