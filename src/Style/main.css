@@ -310,6 +310,13 @@ header.main-header .container > div .right a > i {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 40px;
+}
+@media (max-width: 576px) {
+  .sign-up {
+    padding: 0 10px 20px;
+    margin-top: 180px;
+  }
 }
 .sign-up form {
   width: 350px;
@@ -326,6 +333,20 @@ header.main-header .container > div .right a > i {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+}
+.sign-up form > div:last-of-type {
+  flex-direction: row;
+  align-items: start;
+}
+.sign-up form > div:last-of-type input {
+  margin-right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  transform: translateY(-3px);
+}
+.sign-up form > div:last-of-type label span {
+  color: var(--secondary-500);
 }
 .sign-up form > div label {
   font-size: var(--small-size);
@@ -348,6 +369,10 @@ header.main-header .container > div .right a > i {
   border-radius: 2px;
   font-size: var(--big-light-size);
   font-weight: var(--bold-weight);
+}
+.sign-up form p {
+  color: var(--danger-500);
+  margin-top: 5px;
 }
 
 .cart-page {

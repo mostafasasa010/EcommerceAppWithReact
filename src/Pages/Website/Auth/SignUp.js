@@ -72,6 +72,7 @@ function SignUp() {
               type="password"
               id="password"
               onChange={(e) => setpassword(e.target.value)}
+              placeholder="8+ characters"
             />
             {password < 8 && err && (
               <p>Password Must Be Larger Than 7 Character</p>
@@ -85,6 +86,13 @@ function SignUp() {
               onChange={(e) => setcPassword(e.target.value)}
             />
             {password !== cPassword && err && <p>Password Is Not Match</p>}
+          </div>
+          <div>
+            <input type="checkbox" id="check" required />
+            <label htmlFor="check">
+              Are you agree to Clicon <span>Terms of Condition</span> and{" "}
+              <span>Privacy Policy.</span>
+            </label>
           </div>
           <button type="submit">Sign Up</button>
         </form>

@@ -4,6 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 40px;
+  @include small {
+    padding: 0 10px 20px;
+    margin-top: 180px;
+  }
   form {
     width: 350px;
     padding: 20px;
@@ -18,6 +23,22 @@
       margin-bottom: 20px;
       display: flex;
       flex-direction: column;
+      &:last-of-type {
+        flex-direction: row;
+        align-items: start;
+        input {
+          margin-right: 15px;
+          width: 32px;
+          height: 32px;
+          border-radius: 2px;
+          transform: translateY(-3px);
+        }
+        label {
+          span {
+            color: var(--secondary-500);
+          }
+        }
+      }
       label {
         font-size: var(--small-size);
         margin-bottom: 5px;
@@ -40,6 +61,10 @@
       border-radius: 2px;
       font-size: var(--big-light-size);
       font-weight: var(--bold-weight);
+    }
+    p {
+      color: var(--danger-500);
+      margin-top: 5px;
     }
   }
 }
