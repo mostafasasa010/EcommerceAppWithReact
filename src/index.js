@@ -8,12 +8,15 @@ import "./Style/Libs/duotone/style.css";
 import "./Style/main.css";
 // App File
 import App from "./App";
+import UserProvider from "./Context/Context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

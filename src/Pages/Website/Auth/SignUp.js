@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Header from "../../../Components/Website/Header/Header";
 import TopHeader from "../../../Components/Website/Header/TopHeader";
 import axios from "axios";
+import { User } from "../../../Context/Context";
+import { useNavigate } from "react-router-dom";
+import Cookie from "cookie-universal";
 function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -10,6 +13,9 @@ function SignUp() {
   const [err, setErr] = useState(false);
   const [send, setSend] = useState(false);
   const [errEmail, setErrEmail] = useState("");
+  const userContext = useContext(User);
+  const navigate = useNavigate();
+  const cookie = new Cookie();
   useEffect(() => {
     if (name.length > 1 && password.length > 7 && cPassword === password) {
       setSend(true);
@@ -32,7 +38,17 @@ function SignUp() {
           "https://e-commerce-l194.onrender.com/api/v1/user/signUp",
           data
         );
-        console.log(res);
+        userContext.setAuth({
+          token: res.data.token,
+          name: data.name,
+          email: data.email,
+        });
+        cookie.set("cookieToken", res.data.token);
+        cookie.set("cookieName", data.name);
+        cookie.set("cookieEmail", data.email);
+        if (res.status === 201) {
+          navigate("/");
+        }
       } catch (err) {
         setErrEmail(err.response.data.message);
       }
