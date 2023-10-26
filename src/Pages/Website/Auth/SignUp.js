@@ -7,6 +7,8 @@ import { User } from "../../../Context/Context";
 // Components Files
 import TopHeader from "../../../Components/Website/Header/TopHeader";
 import Header from "../../../Components/Website/Header/Header";
+// Api Files
+import { BaseApi, SIGNUP, USER } from "../../../API/Api";
 // Function Sign Up Page
 function SignUp() {
   // React Dom
@@ -44,10 +46,7 @@ function SignUp() {
     };
     if (send) {
       try {
-        const res = await axios.post(
-          "https://e-commerce-l194.onrender.com/api/v1/user/signUp",
-          data
-        );
+        const res = await axios.post(`${BaseApi}${USER}${SIGNUP}`, data);
         // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieName", data.name);
