@@ -304,6 +304,171 @@ header.main-header .container > div .right a > i {
   color: var(--gray-00);
 }
 
+body {
+  height: 3000px;
+  position: relative;
+}
+
+footer.main-footer {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  background-color: var(--gray-900);
+  padding: 50px 0;
+}
+footer.main-footer .container > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer.main-footer .container > div p {
+  color: var(--gray-00);
+}
+footer.main-footer .container > div p.gray {
+  color: var(--gray-400);
+}
+footer.main-footer .container > div .foot-one {
+  width: 30%;
+}
+@media (max-width: 768px) {
+  footer.main-footer .container > div .foot-one {
+    width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  footer.main-footer .container > div .foot-one {
+    width: 100%;
+  }
+}
+footer.main-footer .container > div .foot-one .top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media (max-width: 576px) {
+  footer.main-footer .container > div .foot-one .top {
+    justify-content: center;
+  }
+}
+footer.main-footer .container > div .foot-one .top h3 {
+  font-size: var(--big-extra-size);
+  color: var(--gray-00);
+}
+footer.main-footer .container > div .foot-one .top img {
+  margin-right: 10px;
+}
+footer.main-footer .container > div .foot-one p:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+footer.main-footer .container > div .foot-two,
+footer.main-footer .container > div .foot-three {
+  width: 20%;
+  padding: 0 20px;
+}
+@media (max-width: 768px) {
+  footer.main-footer .container > div .foot-two,
+  footer.main-footer .container > div .foot-three {
+    width: 50%;
+    padding: 0;
+  }
+}
+@media (max-width: 576px) {
+  footer.main-footer .container > div .foot-two,
+  footer.main-footer .container > div .foot-three {
+    width: 100%;
+  }
+}
+footer.main-footer .container > div .foot-two p:first-of-type,
+footer.main-footer .container > div .foot-three p:first-of-type {
+  margin-bottom: 20px;
+  font-size: var(--big-size);
+  font-weight: var(--light-extra-weight);
+}
+footer.main-footer .container > div .foot-two p:not(:first-of-type):not(:last-of-type),
+footer.main-footer .container > div .foot-three p:not(:first-of-type):not(:last-of-type) {
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  footer.main-footer .container > div .foot-one,
+  footer.main-footer .container > div .foot-two {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 576px) {
+  footer.main-footer .container > div .foot-one,
+  footer.main-footer .container > div .foot-two,
+  footer.main-footer .container > div .foot-three,
+  footer.main-footer .container > div .foot-four {
+    text-align: center;
+  }
+}
+footer.main-footer .container > div .foot-four {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  footer.main-footer .container > div .foot-four {
+    width: 50%;
+  }
+}
+@media (max-width: 576px) {
+  footer.main-footer .container > div .foot-four {
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+footer.main-footer .container > div .foot-four p:first-of-type {
+  margin-bottom: 20px;
+  font-size: var(--big-size);
+  font-weight: var(--light-extra-weight);
+}
+footer.main-footer .container > div .foot-four > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+footer.main-footer .container > div .foot-four > div span {
+  color: var(--gray-00);
+  padding: 8px 10px;
+  border: 1px solid var(--gray-800);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+footer.main-footer .container > div .foot-four > div span:hover {
+  background-color: var(--gray-800);
+  border-color: var(--gray-00);
+}
+footer.main-footer .foot {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: -50px;
+  background-color: var(--gray-900);
+  color: var(--gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--gray-300);
+  font-size: var(--small-size);
+  padding: 0 10px;
+}
+@media (max-width: 576px) {
+  footer.main-footer .foot {
+    font-size: 12px;
+  }
+}
+footer.main-footer .foot span {
+  font-size: var(--big-light-size);
+  font-weight: var(--bold-weight);
+  color: var(--danger-600);
+}
+@media (max-width: 576px) {
+  footer.main-footer .foot span {
+    font-size: var(--medium-size);
+  }
+}
+
 .sign-up {
   margin-top: 200px;
   width: 100%;

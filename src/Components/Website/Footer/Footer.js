@@ -15,7 +15,49 @@ function Footer() {
             </p>
             <p>info@kinbo.com</p>
           </div>
+          <div className="foot-two">
+            <p>Top Category</p>
+            <p className="gray">Computer & Laptop</p>
+            <p className="gray">SmartPhone</p>
+            <p className="gray">Headphone</p>
+            <p className="gray">Camera & Photo</p>
+            <p className="gray">TV & Homes</p>
+          </div>
+          <div className="foot-three">
+            <p>Quick links</p>
+            <p className="gray">Shop Product</p>
+            <p className="gray">Shoping Cart</p>
+            <p className="gray">Wishlist</p>
+            <p className="gray">Compare</p>
+            <p className="gray">Track Order</p>
+            <p className="gray">Customer Help</p>
+            <p className="gray">About Us</p>
+          </div>
+          <div className="foot-four">
+            <p>Popular Tag</p>
+            <div>
+              <span>Game</span>
+              <span>Iphone</span>
+              <span>TV</span>
+              <span>Asus Laptops</span>
+              <span>Macbook</span>
+              <span>SSD</span>
+              <span>Graphics Card</span>
+              <span>Power Bank</span>
+              <span>Smart TV</span>
+              <span>Speaker</span>
+              <span>Tablet</span>
+              <span>Microwave</span>
+              <span>Samsung</span>
+            </div>
+          </div>
         </div>
+      </div>
+      <div className="foot">
+        <p>
+          Coding By <span>Mostafa</span> As Front and <span>Ahmed</span> As Back
+          © 2023. Design by Templatecookie
+        </p>
       </div>
     </footer>
   );
