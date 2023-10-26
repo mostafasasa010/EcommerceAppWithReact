@@ -1,16 +1,21 @@
 import { Link } from "react-router-dom";
-import Logo from "./Logo";
-import Search from "./Search";
 
+// Componente Header
 function Header() {
   return (
     <header className="main-header">
       <div className="container">
         <div>
           <Link to="/">
-            <Logo />
+            <div className="logo">
+              <img src={require("../../../Imgs/Icon.png")} alt="Logo" />
+              <h1>CLICON</h1>
+            </div>
           </Link>
-          <Search />
+          <div className="search-header">
+            <input placeholder="Search for anything..." />
+            <i className="ph ph-magnifying-glass"></i>
+          </div>
           <div className="right">
             <Link to="/cart" className="nav-cart">
               <i className="ph ph-shopping-cart-simple"></i>

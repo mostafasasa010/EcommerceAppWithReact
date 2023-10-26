@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { User } from "../../Context/Context";
 import Cookie from "cookie-universal";
+// Context Files
+import { User } from "../../Context/Context";
 
 function UserPage() {
   const userContext = useContext(User);
@@ -9,7 +10,7 @@ function UserPage() {
     <div className="user-page">
       <h1>User Page</h1>
       {cookie.get("cookieToken") && <p>{cookie.get("cookieToken")}</p>}
-      {cookie.get("cookieName") && <p>{cookie.get("cookieName")}</p>}
+      {userContext.auth.name && <p>{userContext.auth.name}</p>}
     </div>
   );
 }

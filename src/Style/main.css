@@ -93,6 +93,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: var(--main-family);
 }
 
@@ -193,18 +194,18 @@ header.main-header .search-header > i {
 }
 
 .top-header {
-  width: 100%;
-  height: 40px;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px 0;
+  border-bottom: 2px solid var(--gray-300);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-700);
   z-index: 1001;
-  border-bottom: 2px solid var(--gray-300);
-  padding: 10px 0;
 }
 @media (max-width: 576px) {
   .top-header {
@@ -220,8 +221,8 @@ header.main-header .search-header > i {
 @media (max-width: 576px) {
   .top-header .container > div {
     font-size: 12px;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 576px) {
@@ -231,8 +232,8 @@ header.main-header .search-header > i {
 }
 .top-header .container > div > div {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .top-header .container > div > div span {
   margin-right: 8px;
@@ -251,10 +252,10 @@ header.main-header {
   left: 0;
   width: 100%;
   height: 100px;
+  margin-top: 40px;
   display: flex;
   align-items: center;
   background-color: var(--secondary-700);
-  margin-top: 40px;
   z-index: 1000;
 }
 @media (max-width: 576px) {
@@ -287,16 +288,16 @@ header.main-header .container > div .right a span {
   position: absolute;
   top: -7px;
   right: -8px;
-  color: var(--secondary-700);
   width: 20px;
   height: 20px;
-  background-color: var(--gray-00);
+  border: 2px solid var(--secondary-700);
+  border-radius: 50%;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  font-size: 12px;
-  border: 2px solid var(--secondary-700);
+  background-color: var(--gray-00);
+  color: var(--secondary-700);
 }
 header.main-header .container > div .right a > i {
   display: block;
@@ -304,17 +305,12 @@ header.main-header .container > div .right a > i {
   color: var(--gray-00);
 }
 
-body {
-  height: 3000px;
-  position: relative;
-}
-
 footer.main-footer {
   position: absolute;
-  bottom: 50px;
   left: 0;
-  background-color: var(--gray-900);
+  bottom: 50px;
   padding: 50px 0;
+  background-color: var(--gray-900);
 }
 footer.main-footer .container > div {
   display: flex;
@@ -340,9 +336,12 @@ footer.main-footer .container > div .foot-one {
   }
 }
 footer.main-footer .container > div .foot-one .top {
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+}
+footer.main-footer .container > div .foot-one .top p:not(:last-of-type) {
+  margin-bottom: 10px;
 }
 @media (max-width: 576px) {
   footer.main-footer .container > div .foot-one .top {
@@ -355,9 +354,6 @@ footer.main-footer .container > div .foot-one .top h3 {
 }
 footer.main-footer .container > div .foot-one .top img {
   margin-right: 10px;
-}
-footer.main-footer .container > div .foot-one p:not(:last-of-type) {
-  margin-bottom: 10px;
 }
 footer.main-footer .container > div .foot-two,
 footer.main-footer .container > div .foot-three {
@@ -387,20 +383,6 @@ footer.main-footer .container > div .foot-two p:not(:first-of-type):not(:last-of
 footer.main-footer .container > div .foot-three p:not(:first-of-type):not(:last-of-type) {
   margin-bottom: 10px;
 }
-@media (max-width: 768px) {
-  footer.main-footer .container > div .foot-one,
-  footer.main-footer .container > div .foot-two {
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 576px) {
-  footer.main-footer .container > div .foot-one,
-  footer.main-footer .container > div .foot-two,
-  footer.main-footer .container > div .foot-three,
-  footer.main-footer .container > div .foot-four {
-    text-align: center;
-  }
-}
 footer.main-footer .container > div .foot-four {
   width: 30%;
   display: flex;
@@ -428,30 +410,44 @@ footer.main-footer .container > div .foot-four > div {
   gap: 5px;
 }
 footer.main-footer .container > div .foot-four > div span {
-  color: var(--gray-00);
   padding: 8px 10px;
   border: 1px solid var(--gray-800);
   border-radius: 2px;
+  color: var(--gray-00);
   transition: 0.3s;
 }
 footer.main-footer .container > div .foot-four > div span:hover {
-  background-color: var(--gray-800);
   border-color: var(--gray-00);
+  background-color: var(--gray-800);
+}
+@media (max-width: 768px) {
+  footer.main-footer .container > div .foot-one,
+  footer.main-footer .container > div .foot-two {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 576px) {
+  footer.main-footer .container > div .foot-one,
+  footer.main-footer .container > div .foot-two,
+  footer.main-footer .container > div .foot-three,
+  footer.main-footer .container > div .foot-four {
+    text-align: center;
+  }
 }
 footer.main-footer .foot {
   position: absolute;
+  bottom: -50px;
   width: 100%;
   height: 50px;
-  bottom: -50px;
-  background-color: var(--gray-900);
-  color: var(--gray-300);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  padding: 0 10px;
   border-top: 1px solid var(--gray-300);
   font-size: var(--small-size);
-  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--gray-900);
+  color: var(--gray-300);
 }
 @media (max-width: 576px) {
   footer.main-footer .foot {
@@ -470,12 +466,12 @@ footer.main-footer .foot span {
 }
 
 .sign-up {
-  margin-top: 200px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding-bottom: 40px;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 576px) {
   .sign-up {
@@ -486,13 +482,13 @@ footer.main-footer .foot span {
 .sign-up form {
   width: 350px;
   padding: 20px;
-  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);
   border: 1px solid var(--gray-100);
   border-radius: 4px;
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.12);
 }
 .sign-up form h1 {
-  text-align: center;
   margin-bottom: 20px;
+  text-align: center;
 }
 .sign-up form > div {
   margin-bottom: 20px;
@@ -500,44 +496,44 @@ footer.main-footer .foot span {
   flex-direction: column;
 }
 .sign-up form > div:last-of-type {
-  flex-direction: row;
   align-items: start;
+  flex-direction: row;
 }
 .sign-up form > div:last-of-type input {
   margin-right: 15px;
+  border-radius: 2px;
   width: 32px;
   height: 32px;
-  border-radius: 2px;
   transform: translateY(-3px);
 }
 .sign-up form > div:last-of-type label span {
   color: var(--secondary-500);
 }
 .sign-up form > div label {
-  font-size: var(--small-size);
   margin-bottom: 5px;
+  font-size: var(--small-size);
   font-weight: var(--normal-extra-weight);
 }
 .sign-up form > div input {
-  border-radius: 2px;
-  border: 1px solid var(--gray-100);
-  outline: none;
   padding: 12px 15px;
+  border: 1px solid var(--gray-100);
+  border-radius: 2px;
+  outline: none;
 }
 .sign-up form button {
-  border: none;
+  width: 100%;
   padding: 15px 20px;
+  border: none;
+  border-radius: 2px;
   background-color: var(--primary-500);
   color: var(--gray-00);
-  cursor: pointer;
-  width: 100%;
-  border-radius: 2px;
   font-size: var(--big-light-size);
   font-weight: var(--bold-weight);
+  cursor: pointer;
 }
 .sign-up form p {
-  color: var(--danger-500);
   margin-top: 5px;
+  color: var(--danger-500);
 }
 
 .home-page {

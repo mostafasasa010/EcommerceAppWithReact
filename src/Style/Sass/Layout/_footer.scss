@@ -1,14 +1,10 @@
-body {
-  height: 3000px;
-  position: relative;
-}
-
+// Main Footer Style
 footer.main-footer {
   position: absolute;
-  bottom: 50px;
   left: 0;
-  background-color: var(--gray-900);
+  bottom: 50px;
   padding: 50px 0;
+  background-color: var(--gray-900);
   .container {
     > div {
       display: flex;
@@ -28,9 +24,12 @@ footer.main-footer {
           width: 100%;
         }
         .top {
+          margin-bottom: 20px;
           display: flex;
           align-items: center;
-          margin-bottom: 20px;
+          p:not(:last-of-type) {
+            margin-bottom: 10px;
+          }
           @include small {
             justify-content: center;
           }
@@ -41,9 +40,6 @@ footer.main-footer {
           img {
             margin-right: 10px;
           }
-        }
-        p:not(:last-of-type) {
-          margin-bottom: 10px;
         }
       }
       .foot-two,
@@ -68,20 +64,6 @@ footer.main-footer {
           }
         }
       }
-      .foot-one,
-      .foot-two {
-        @include medium {
-          margin-bottom: 30px;
-        }
-      }
-      .foot-one,
-      .foot-two,
-      .foot-three,
-      .foot-four {
-        @include small {
-          text-align: center;
-        }
-      }
       .foot-four {
         width: 30%;
         display: flex;
@@ -103,34 +85,48 @@ footer.main-footer {
           flex-wrap: wrap;
           gap: 5px;
           span {
-            color: var(--gray-00);
             padding: 8px 10px;
             border: 1px solid var(--gray-800);
             border-radius: 2px;
+            color: var(--gray-00);
             transition: 0.3s;
             &:hover {
-              background-color: var(--gray-800);
               border-color: var(--gray-00);
+              background-color: var(--gray-800);
             }
           }
+        }
+      }
+      .foot-one,
+      .foot-two {
+        @include medium {
+          margin-bottom: 30px;
+        }
+      }
+      .foot-one,
+      .foot-two,
+      .foot-three,
+      .foot-four {
+        @include small {
+          text-align: center;
         }
       }
     }
   }
   .foot {
     position: absolute;
+    bottom: -50px;
     width: 100%;
     height: 50px;
-    bottom: -50px;
-    background-color: var(--gray-900);
-    color: var(--gray-300);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    padding: 0 10px;
     border-top: 1px solid var(--gray-300);
     font-size: var(--small-size);
-    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--gray-900);
+    color: var(--gray-300);
     @include small {
       font-size: 12px;
     }

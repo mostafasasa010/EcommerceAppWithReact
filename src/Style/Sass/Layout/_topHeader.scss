@@ -1,16 +1,17 @@
+// To Header Style
 .top-header {
-  width: 100%;
-  height: 40px;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 40px;
+  padding: 10px 0;
+  border-bottom: 2px solid var(--gray-300);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--secondary-700);
   z-index: 1001;
-  border-bottom: 2px solid var(--gray-300);
-  padding: 10px 0;
   @include small {
     height: 50px;
   }
@@ -22,8 +23,8 @@
       color: var(--gray-00);
       @include small {
         font-size: 12px;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
       }
       p {
         @include small {
@@ -32,8 +33,8 @@
       }
       > div {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         span {
           margin-right: 8px;
         }

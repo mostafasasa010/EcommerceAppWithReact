@@ -1,28 +1,38 @@
 import { useContext, useEffect, useState } from "react";
-import Header from "../../../Components/Website/Header/Header";
-import TopHeader from "../../../Components/Website/Header/TopHeader";
-import axios from "axios";
-import { User } from "../../../Context/Context";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Cookie from "cookie-universal";
+// Context Files
+import { User } from "../../../Context/Context";
+// Components Files
+import TopHeader from "../../../Components/Website/Header/TopHeader";
+import Header from "../../../Components/Website/Header/Header";
+// Function Sign Up Page
 function SignUp() {
+  // React Dom
+  const navigate = useNavigate();
+  // User Data
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
   const [cPassword, setcPassword] = useState("");
+  // Error Handle
   const [err, setErr] = useState(false);
-  const [send, setSend] = useState(false);
   const [errEmail, setErrEmail] = useState("");
+  const [send, setSend] = useState(false);
+  // Context
   const userContext = useContext(User);
-  const navigate = useNavigate();
+  // Cookie
   const cookie = new Cookie();
+  // This Use Effect Because Set True When Accept Condition
   useEffect(() => {
     if (name.length > 1 && password.length > 7 && cPassword === password) {
       setSend(true);
     } else {
       setSend(false);
     }
-  }, [cPassword, err, name.length, password]);
+  }, [err]);
+  // This Function To Handle Submit Form
   async function handleSubmit(e) {
     e.preventDefault();
     setErr(true);
@@ -38,14 +48,16 @@ function SignUp() {
           "https://e-commerce-l194.onrender.com/api/v1/user/signUp",
           data
         );
-        userContext.setAuth({
-          token: res.data.token,
-          name: data.name,
-          email: data.email,
-        });
+        // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieName", data.name);
         cookie.set("cookieEmail", data.email);
+        // Get Data User From Cookies Then Set To Context Store
+        userContext.setAuth({
+          token: cookie.get("cookieToken"),
+          name: cookie.get("cookieName"),
+          email: cookie.get("cookieEmail"),
+        });
         if (res.status === 201) {
           navigate("/");
         }
