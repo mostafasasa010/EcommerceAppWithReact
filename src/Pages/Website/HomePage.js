@@ -9,7 +9,7 @@ function HomePage() {
       <TopHeader />
       <Header />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
