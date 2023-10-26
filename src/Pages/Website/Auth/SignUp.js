@@ -5,6 +5,7 @@ import Cookie from "cookie-universal";
 // Context Files
 import { User } from "../../../Context/Context";
 // Components Files
+import Loading from "../../../Components/Loading/Loading";
 import TopHeader from "../../../Components/Website/Header/TopHeader";
 import Header from "../../../Components/Website/Header/Header";
 // Api Files
@@ -22,6 +23,8 @@ function SignUp() {
   const [err, setErr] = useState(false);
   const [errEmail, setErrEmail] = useState("");
   const [send, setSend] = useState(false);
+  // Loading Handle
+  // const [loading, setLoading] = useState(false);
   // Context
   const userContext = useContext(User);
   // Cookie
