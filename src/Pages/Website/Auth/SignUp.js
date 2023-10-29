@@ -40,6 +40,7 @@ function SignUp() {
   // This Function To Handle Submit Form
   async function handleSubmit(e) {
     e.preventDefault();
+    // When On Submit Show Loading
     setLoading(true);
     setErr(true);
     const data = {
@@ -51,6 +52,7 @@ function SignUp() {
     if (send) {
       try {
         const res = await axios.post(`${BaseApi}${USER}${SIGNUP}`, data);
+        // When Send To Data Done, Hidden Loading
         setLoading(false);
         // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
@@ -66,6 +68,7 @@ function SignUp() {
           navigate("/");
         }
       } catch (err) {
+        // When Error Send Data, Hidden Loading
         setLoading(false);
         setErrEmail(err.response.data.message);
       }

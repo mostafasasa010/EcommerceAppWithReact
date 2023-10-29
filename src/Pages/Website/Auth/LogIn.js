@@ -5,6 +5,7 @@ import Cookie from "cookie-universal";
 // Context Files
 import { User } from "../../../Context/Context";
 // Components Files
+import Loading from "../../../Components/Loading/Loading";
 import TopHeader from "../../../Components/Website/Header/TopHeader";
 import Header from "../../../Components/Website/Header/Header";
 // Api Files
@@ -20,6 +21,8 @@ function Login() {
   const [err, setErr] = useState(false);
   const [errEmail, setErrEmail] = useState("");
   const [send, setSend] = useState(false);
+  // Loading Handle
+  const [loading, setLoading] = useState(false);
   // Context
   const userContext = useContext(User);
   // Cookie
@@ -31,10 +34,12 @@ function Login() {
     } else {
       setSend(false);
     }
-  }, [err]);
+  }, [password.length]);
   // This Function To Handle Submit Form
   async function handleSubmit(e) {
     e.preventDefault();
+    // When On Submit Show Loading
+    setLoading(true);
     setErr(true);
     const data = {
       email: email,
@@ -43,6 +48,8 @@ function Login() {
     if (send) {
       try {
         const res = await axios.post(`${BaseApi}${USER}${LOGIN}`, data);
+        // When Send To Data Done, Hidden Loading
+        setLoading(false);
         // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieEmail", data.email);
@@ -55,12 +62,17 @@ function Login() {
           navigate("/");
         }
       } catch (err) {
+        // When Error Send Data, Hidden Loading
+        setLoading(false);
         setErrEmail(err.response.data.message);
       }
+    } else {
+      setLoading(false);
     }
   }
   return (
     <>
+      {loading && <Loading />}
       <TopHeader />
       <Header />
       <div className="sign-up">
