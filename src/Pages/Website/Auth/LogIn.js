@@ -50,7 +50,7 @@ function Login() {
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieEmail", data.email);
         if (res.status === 200) {
-          navigate("/");
+          navigate("/users");
         }
       } catch (err) {
         // When Error Send Data, Hidden Loading

@@ -6,6 +6,7 @@ import CartPage from "./Pages/Website/CartPage";
 import FavPage from "./Pages/Website/FavPage";
 import UserPage from "./Pages/Website/UserPage";
 import Login from "./Pages/Website/Auth/LogIn";
+import UsersData from "./Pages/Website/UsersData";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/users" element={<UsersData />} />
       </Routes>
     </div>
   );
