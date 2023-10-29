@@ -24,7 +24,7 @@ function SignUp() {
   const [errEmail, setErrEmail] = useState("");
   const [send, setSend] = useState(false);
   // Loading Handle
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   // Context
   const userContext = useContext(User);
   // Cookie
@@ -36,10 +36,11 @@ function SignUp() {
     } else {
       setSend(false);
     }
-  }, [err]);
+  }, [cPassword, name.length, password]);
   // This Function To Handle Submit Form
   async function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true);
     setErr(true);
     const data = {
       name: name,
@@ -50,6 +51,7 @@ function SignUp() {
     if (send) {
       try {
         const res = await axios.post(`${BaseApi}${USER}${SIGNUP}`, data);
+        setLoading(false);
         // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieName", data.name);
@@ -64,12 +66,16 @@ function SignUp() {
           navigate("/");
         }
       } catch (err) {
+        setLoading(false);
         setErrEmail(err.response.data.message);
       }
+    } else {
+      setLoading(false);
     }
   }
   return (
     <>
+      {loading && <Loading />}
       <TopHeader />
       <Header />
       <div className="sign-up">
