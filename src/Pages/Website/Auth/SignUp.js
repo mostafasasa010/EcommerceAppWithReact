@@ -1,9 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookie from "cookie-universal";
-// Context Files
-import { User } from "../../../Context/Context";
 // Components Files
 import Loading from "../../../Components/Loading/Loading";
 import TopHeader from "../../../Components/Website/Header/TopHeader";
@@ -25,8 +23,6 @@ function SignUp() {
   const [send, setSend] = useState(false);
   // Loading Handle
   const [loading, setLoading] = useState(false);
-  // Context
-  const userContext = useContext(User);
   // Cookie
   const cookie = new Cookie();
   // This Use Effect Because Set True When Accept Condition
@@ -58,12 +54,6 @@ function SignUp() {
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieName", data.name);
         cookie.set("cookieEmail", data.email);
-        // Get Data User From Cookies Then Set To Context Store
-        userContext.setAuth({
-          token: cookie.get("cookieToken"),
-          name: cookie.get("cookieName"),
-          email: cookie.get("cookieEmail"),
-        });
         if (res.status === 201) {
           navigate("/");
         }
