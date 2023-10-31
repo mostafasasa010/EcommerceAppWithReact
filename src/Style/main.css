@@ -360,6 +360,9 @@ header.main-header {
     margin-top: 50px;
   }
 }
+header.main-header.dash {
+  margin-top: 0px;
+}
 header.main-header .container > div {
   display: flex;
   align-items: center;
@@ -561,6 +564,41 @@ footer.main-footer .foot span {
   }
 }
 
+.side-dash {
+  position: fixed;
+  width: 25%;
+  height: calc(100vh - 100px);
+  left: 10px;
+  top: 115px;
+}
+.side-dash > div {
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-100);
+  border-radius: 4px;
+  padding: 10px 0;
+}
+.side-dash > div ul {
+  width: 100%;
+}
+.side-dash > div ul li {
+  width: 100%;
+}
+.side-dash > div ul li a {
+  display: block;
+  width: 100%;
+  padding: 15px 25px;
+  color: var(--gray-600);
+  background-color: var(--gray-00);
+  transition: 0.3s;
+}
+.side-dash > div ul li a.active {
+  color: var(--gray-00);
+  background-color: var(--primary-500);
+}
+.side-dash > div ul li a i {
+  margin-right: 10px;
+}
+
 .sign-up {
   width: 100%;
   padding-bottom: 40px;
@@ -673,6 +711,42 @@ footer.main-footer .foot span {
 
 .user-page {
   margin-top: 140px;
+}
+
+.dashboard {
+  position: relative;
+}
+.dashboard main {
+  width: calc(75% - 10px);
+  margin-left: calc(25% + 10px);
+  margin-top: 115px;
+}
+
+.users {
+  padding: 0 20px 20px;
+}
+.users table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  overflow: hidden;
+}
+.users table tr:nth-child(even) {
+  background-color: rgba(255, 231, 214, 0.5);
+}
+.users table th,
+.users table td {
+  padding: 12px;
+  border: 1px solid var(--gray-200);
+  text-align: center;
+}
+.users table th {
+  background-color: var(--primary-500);
+  color: var(--gray-00);
+}
+.users table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*# sourceMappingURL=main.css.map */

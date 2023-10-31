@@ -1,0 +1,26 @@
+.users {
+  padding: 0 20px 20px;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow: hidden;
+    tr:nth-child(even) {
+      background-color: rgb(255 231 214 / 50%);
+    }
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid var(--gray-200);
+      text-align: center;
+    }
+    th {
+      background-color: var(--primary-500);
+      color: var(--gray-00);
+    }
+    td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

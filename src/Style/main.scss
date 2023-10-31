@@ -16,6 +16,7 @@
 @import "Sass/Layout/topHeader";
 @import "Sass/Layout/header";
 @import "Sass/Layout/footer";
+@import "Sass/Layout/SideBarDash";
 
 // Pages Files
 @import "Sass/Pages/signUp";
@@ -23,3 +24,5 @@
 @import "Sass/Pages/cartPage";
 @import "Sass/Pages/favPage";
 @import "Sass/Pages/userPage";
+@import "Sass/Pages/dashboard";
+@import "Sass/Pages/Users";
