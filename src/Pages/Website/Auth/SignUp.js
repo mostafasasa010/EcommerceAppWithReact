@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookie from "cookie-universal";
 // Components Files
@@ -50,10 +50,17 @@ function SignUp() {
         const res = await axios.post(`${BaseApi}${USER}${SIGNUP}`, data);
         // When Send To Data Done, Hidden Loading
         setLoading(false);
+        console.log(res);
+        // Access To Payload
+        const payload = res.data.token.split(".")[1];
+        const decodedPayload = atob(payload);
+        const jsonPayload = JSON.parse(decodedPayload);
+        console.log(jsonPayload);
         // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieName", data.name);
         cookie.set("cookieEmail", data.email);
+        cookie.set("cookieRole", res.data.data.data.role);
         if (res.status === 201) {
           navigate("/");
         }
@@ -124,6 +131,10 @@ function SignUp() {
             </label>
           </div>
           <button type="submit">Sign Up</button>
+          <p className="p-signup">
+            <i className="ph ph-hand"></i>
+            If You Have An Account <Link to="/login">Log In Now.</Link>
+          </p>
         </form>
       </div>
     </>

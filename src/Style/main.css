@@ -631,6 +631,33 @@ footer.main-footer .foot span {
   margin-top: 5px;
   color: var(--danger-500);
 }
+.sign-up form .p-login,
+.sign-up form .p-signup {
+  margin-top: 15px;
+  color: var(--gray-900);
+  display: flex;
+  align-items: center;
+}
+.sign-up form .p-login i,
+.sign-up form .p-signup i {
+  margin-right: 5px;
+  color: var(--secondary-500);
+  font-size: var(--big-light-size);
+}
+.sign-up form .p-login a,
+.sign-up form .p-signup a {
+  color: var(--secondary-500);
+  font-weight: var(--bold-weight);
+  margin-left: 5px;
+  transition: 0.3s;
+}
+.sign-up form .p-login a:hover,
+.sign-up form .p-signup a:hover {
+  color: var(--secondary-700);
+}
+.sign-up form .p-login {
+  font-size: var(--small-size);
+}
 
 .home-page {
   margin-top: 140px;

@@ -3,11 +3,13 @@ function Logout() {
   const cookie = Cookie();
   function handleLogout() {
     cookie.remove("cookieToken");
-    cookie.remove("cookieName");
-    cookie.remove("cookieEmail");
     window.location.pathname = "/";
   }
-  return <button onClick={handleLogout}>Logout</button>;
+  return (
+    <button className="log-out" onClick={handleLogout}>
+      Logout
+    </button>
+  );
 }
 
 export default Logout;

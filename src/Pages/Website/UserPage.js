@@ -13,7 +13,17 @@ function UserPage() {
   return (
     <div className="user-page">
       <h1>User Page</h1>
-      {cookie.get("cookieName") && <p>{cookie.get("cookieName")}</p>}
+      {cookie.get("cookieName") && cookie.get("cookieRole") === "user" ? (
+        <p>{cookie.get("cookieName")}</p>
+      ) : cookie.get("cookieName") === "" &&
+        cookie.get("cookieRole") === "user" ? (
+        <p>User</p>
+      ) : cookie.get("cookieName") === "" &&
+        cookie.get("cookieRole") === "admin" ? (
+        <p>Admin</p>
+      ) : (
+        <p>{cookie.get("cookieName")}</p>
+      )}
     </div>
   );
 }

@@ -67,5 +67,30 @@
       margin-top: 5px;
       color: var(--danger-500);
     }
+    // P Component
+    .p-login,
+    .p-signup {
+      margin-top: 15px;
+      color: var(--gray-900);
+      display: flex;
+      align-items: center;
+      i {
+        margin-right: 5px;
+        color: var(--secondary-500);
+        font-size: var(--big-light-size);
+      }
+      a {
+        color: var(--secondary-500);
+        font-weight: var(--bold-weight);
+        margin-left: 5px;
+        transition: 0.3s;
+        &:hover {
+          color: var(--secondary-700);
+        }
+      }
+    }
+    .p-login {
+      font-size: var(--small-size);
+    }
   }
 }
