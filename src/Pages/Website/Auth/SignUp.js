@@ -50,17 +50,15 @@ function SignUp() {
         const res = await axios.post(`${BaseApi}${USER}${SIGNUP}`, data);
         // When Send To Data Done, Hidden Loading
         setLoading(false);
-        console.log(res);
         // Access To Payload
         const payload = res.data.token.split(".")[1];
         const decodedPayload = atob(payload);
         const jsonPayload = JSON.parse(decodedPayload);
-        console.log(jsonPayload);
         // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
-        cookie.set("cookieName", data.name);
+        cookie.set("cookieName", jsonPayload.name);
         cookie.set("cookieEmail", data.email);
-        cookie.set("cookieRole", res.data.data.data.role);
+        cookie.set("cookieRole", jsonPayload.role);
         if (res.status === 201) {
           navigate("/");
         }
