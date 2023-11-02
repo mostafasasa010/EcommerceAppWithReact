@@ -57,6 +57,7 @@ function SignUp() {
         // Set Data User To Cookies
         cookie.set("cookieToken", res.data.token);
         cookie.set("cookieName", jsonPayload.name);
+        cookie.set("cookieId", jsonPayload.id);
         cookie.set("cookieEmail", data.email);
         cookie.set("cookieRole", jsonPayload.role);
         if (res.status === 201) {

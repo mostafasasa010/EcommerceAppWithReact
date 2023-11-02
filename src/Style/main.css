@@ -748,5 +748,22 @@ footer.main-footer .foot span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.users table td a {
+  color: var(--gray-900);
+}
+.users table td a i {
+  font-size: var(--big-size);
+  transition: 0.3s;
+}
+.users table td a i.delete {
+  margin-right: 10px;
+}
+.users table td a i.delete:hover {
+  color: var(--danger-500);
+  margin-right: 10px;
+}
+.users table td a i.edit:hover {
+  color: var(--success-500);
+}
 
 /*# sourceMappingURL=main.css.map */

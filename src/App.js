@@ -6,7 +6,6 @@ import CartPage from "./Pages/Website/CartPage";
 import FavPage from "./Pages/Website/FavPage";
 import UserPage from "./Pages/Website/UserPage";
 import Login from "./Pages/Website/Auth/LogIn";
-import UsersData from "./Pages/Website/UsersData";
 import Products from "./Pages/Dashboard/Products";
 import Users from "./Pages/Dashboard/Users";
 import Dashboard from "./Pages/Dashboard/Dashboard";
@@ -26,7 +25,6 @@ function App() {
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/users" element={<UsersData />} />
       </Routes>
     </div>
   );

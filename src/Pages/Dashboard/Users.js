@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Cookie from "cookie-universal";
-import { BaseApi, USER } from "../../API/Api";
+import { BaseApi, USER, USERID } from "../../API/Api";
 import Loading from "../../Components/Loading/Loading";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Users() {
   const [usersData, setUsersData] = useState([]);
@@ -24,15 +26,35 @@ function Users() {
   useEffect(() => {
     api();
   }, []);
-  console.log(usersData);
+  async function handleDelete(id) {
+    try {
+      const res = await axios.delete(`${BaseApi}${USER}${id}`, {
+        headers: {
+          Authorization: "Bearer " + cookie.get("cookieToken"),
+        },
+      });
+      console.log(res);
+      res === 200 && writeName();
+    } catch (err) {
+      console.log(err);
+    }
+  }
   function writeName() {
     if (usersData && usersData.length > 0) {
       return usersData.map((user, i) => (
         <tr key={i}>
-          <td>{i}</td>
+          <td>{i + 1}</td>
           <td>{user.name}</td>
           <td>{user.email}</td>
           <td>{user.role}</td>
+          <td>
+            <Link onClick={() => handleDelete(user._id)}>
+              <i className="ph ph-trash delete"></i>
+            </Link>
+            <Link to={USERID}>
+              <i className="ph ph-pencil edit"></i>
+            </Link>
+          </td>
         </tr>
       ));
     }
@@ -49,6 +71,7 @@ function Users() {
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>{writeName()}</tbody>
