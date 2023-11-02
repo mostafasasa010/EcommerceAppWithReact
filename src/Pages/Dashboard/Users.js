@@ -7,6 +7,7 @@ import axios from "axios";
 
 function Users() {
   const [usersData, setUsersData] = useState([]);
+  const [isDeleted, setIsDeleted] = useState(false);
   const cookie = Cookie();
   const [loading, setLoading] = useState(true);
   async function api() {
@@ -25,7 +26,7 @@ function Users() {
   }
   useEffect(() => {
     api();
-  }, []);
+  }, [isDeleted]);
   async function handleDelete(id) {
     try {
       const res = await axios.delete(`${BaseApi}${USER}${id}`, {
@@ -33,8 +34,9 @@ function Users() {
           Authorization: "Bearer " + cookie.get("cookieToken"),
         },
       });
-      console.log(res);
-      res === 200 && writeName();
+      if (res.status === 204) {
+        setIsDeleted(!isDeleted);
+      }
     } catch (err) {
       console.log(err);
     }
