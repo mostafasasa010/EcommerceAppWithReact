@@ -675,6 +675,11 @@ footer.main-footer .foot span {
 }
 @media (max-width: 576px) {
   .side-dash {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .side-dash {
     top: 100px;
   }
 }
@@ -684,11 +689,6 @@ footer.main-footer .foot span {
   border-radius: 4px;
   padding: 10px 0;
   background-color: var(--gray-00);
-}
-@media (max-width: 576px) {
-  .side-dash > div {
-    display: none;
-  }
 }
 .side-dash > div.active {
   left: 0;

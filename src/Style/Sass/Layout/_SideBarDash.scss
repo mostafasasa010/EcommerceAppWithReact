@@ -5,6 +5,9 @@
   left: 10px;
   top: 115px;
   @include small {
+    display: none;
+  }
+  @include small {
     top: 100px;
   }
   > div {
@@ -13,9 +16,6 @@
     border-radius: 4px;
     padding: 10px 0;
     background-color: var(--gray-00);
-    @include small {
-      display: none;
-    }
     &.active {
       left: 0;
     }
