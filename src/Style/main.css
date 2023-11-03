@@ -846,6 +846,7 @@ footer.main-footer .foot span {
   width: calc(75% - 10px);
   margin-left: calc(25% + 10px);
   margin-top: 115px;
+  padding: 0 20px;
 }
 @media (max-width: 576px) {
   .dashboard main {
@@ -855,9 +856,6 @@ footer.main-footer .foot span {
   }
 }
 
-.users {
-  padding: 0 20px 20px;
-}
 @media (max-width: 576px) {
   .users {
     font-size: var(--small-size);
@@ -916,6 +914,42 @@ footer.main-footer .foot span {
 }
 .users table td a i.edit {
   color: var(--success-500);
+}
+.users table td a i.show {
+  color: var(--secondary-500);
+  margin-left: 10px;
+}
+
+.show-user h3 {
+  font-size: var(--big-size);
+  margin-bottom: 20px;
+}
+.show-user h3 span {
+  color: var(--secondary-600);
+}
+.show-user p {
+  margin-bottom: 10px;
+}
+.show-user p span {
+  font-size: var(--medium-extra-size);
+  color: var(--secondary-600);
+  font-weight: var(--bold-weight);
+}
+.show-user button {
+  background-color: var(--danger-500);
+  padding: 10px 12px;
+  color: var(--gray-00);
+  border: 2px solid var(--danger-500);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: var(--medium-extra-size);
+  margin-top: 20px;
+  font-weight: var(--bold-weight);
+}
+.show-user button:hover {
+  background-color: var(--gray-00);
+  color: var(--danger-500);
 }
 
 /*# sourceMappingURL=main.css.map */

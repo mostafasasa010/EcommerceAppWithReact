@@ -1,5 +1,4 @@
 .users {
-  padding: 0 20px 20px;
   @include small {
     font-size: var(--small-size);
   }
@@ -45,6 +44,10 @@
           }
           &.edit {
             color: var(--success-500);
+          }
+          &.show {
+            color: var(--secondary-500);
+            margin-left: 10px;
           }
         }
       }

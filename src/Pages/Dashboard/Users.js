@@ -56,6 +56,12 @@ function Users() {
             <Link to={USERID}>
               <i className="ph ph-pencil edit"></i>
             </Link>
+            <Link
+              to={`/dashboard/users/show/${user._id}`}
+              onClick={() => cookie.set("cookieIdShow", user._id)}
+            >
+              <i className="ph ph-eye show"></i>
+            </Link>
           </td>
         </tr>
       ));

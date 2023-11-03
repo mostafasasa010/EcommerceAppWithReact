@@ -1,0 +1,33 @@
+.show-user {
+  h3 {
+    font-size: var(--big-size);
+    margin-bottom: 20px;
+    span {
+      color: var(--secondary-600);
+    }
+  }
+  p {
+    span {
+      font-size: var(--medium-extra-size);
+      color: var(--secondary-600);
+      font-weight: var(--bold-weight);
+    }
+    margin-bottom: 10px;
+  }
+  button {
+    background-color: var(--danger-500);
+    padding: 10px 12px;
+    color: var(--gray-00);
+    border: 2px solid var(--danger-500);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: var(--medium-extra-size);
+    margin-top: 20px;
+    font-weight: var(--bold-weight);
+    &:hover {
+      background-color: var(--gray-00);
+      color: var(--danger-500);
+    }
+  }
+}
