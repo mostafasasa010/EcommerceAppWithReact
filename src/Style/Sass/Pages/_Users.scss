@@ -1,4 +1,5 @@
-.users {
+.users,
+.products-dash {
   @include small {
     font-size: var(--small-size);
   }
@@ -23,7 +24,8 @@
       background-color: var(--primary-500);
       color: var(--gray-00);
     }
-    td {
+    td,
+    th {
       overflow: hidden;
       text-overflow: ellipsis;
       @include small {
