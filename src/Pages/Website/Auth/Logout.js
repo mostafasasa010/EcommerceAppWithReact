@@ -2,7 +2,7 @@ import Cookie from "cookie-universal";
 function Logout() {
   const cookie = Cookie();
   function handleLogout() {
-    cookie.remove("cookieToken");
+    cookie.removeAll();
     window.location.pathname = "/";
   }
   return (
