@@ -368,6 +368,12 @@ header.main-header {
 header.main-header.dash {
   margin-top: 0px;
 }
+header.main-header.dash + .menu-phones {
+  top: -70px;
+}
+header.main-header.dash + .menu-phones.active {
+  top: 80px;
+}
 header.main-header .container > div {
   display: flex;
   align-items: center;
@@ -379,6 +385,9 @@ header.main-header .container > div .right {
 }
 header.main-header .container > div .right > i {
   display: none;
+}
+header.main-header .container > div .right > i.second {
+  background-color: var(--primary-500);
 }
 @media (max-width: 576px) {
   header.main-header .container > div .right > i {
@@ -462,9 +471,16 @@ header.main-header .container > div .right a > i {
   background-color: var(--secondary-700);
   padding: 10px 0;
   transition: 0.3s;
+  z-index: 999;
 }
 .menu-phones.active {
   top: 130px;
+}
+.menu-phones.second li a {
+  background-color: var(--primary-500);
+}
+.menu-phones.second li a.active {
+  background-color: var(--primary-900);
 }
 .menu-phones li {
   width: 100%;
@@ -478,9 +494,13 @@ header.main-header .container > div .right a > i {
   text-align: center;
   color: var(--gray-00);
   padding: 10px;
-  background-color: var(--secondary-900);
+  background-color: var(--secondary-800);
   margin: 0 auto;
   border-radius: 4px;
+  transition: 0.3s;
+}
+.menu-phones li a.active {
+  background-color: var(--secondary-900);
 }
 .menu-phones li a i {
   margin-right: 10px;
@@ -653,11 +673,25 @@ footer.main-footer .foot span {
   left: 10px;
   top: 115px;
 }
+@media (max-width: 576px) {
+  .side-dash {
+    top: 100px;
+  }
+}
 .side-dash > div {
   box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
   border: 1px solid var(--gray-100);
   border-radius: 4px;
   padding: 10px 0;
+  background-color: var(--gray-00);
+}
+@media (max-width: 576px) {
+  .side-dash > div {
+    display: none;
+  }
+}
+.side-dash > div.active {
+  left: 0;
 }
 .side-dash > div ul {
   width: 100%;
@@ -673,12 +707,22 @@ footer.main-footer .foot span {
   background-color: var(--gray-00);
   transition: 0.3s;
 }
+@media (max-width: 576px) {
+  .side-dash > div ul li a {
+    text-align: center;
+  }
+}
 .side-dash > div ul li a.active {
   color: var(--gray-00);
   background-color: var(--primary-500);
 }
 .side-dash > div ul li a i {
   margin-right: 10px;
+}
+@media (max-width: 576px) {
+  .side-dash > div ul li a i {
+    margin: 0;
+  }
 }
 
 .sign-up {
@@ -803,9 +847,21 @@ footer.main-footer .foot span {
   margin-left: calc(25% + 10px);
   margin-top: 115px;
 }
+@media (max-width: 576px) {
+  .dashboard main {
+    margin-top: 100px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
 
 .users {
   padding: 0 20px 20px;
+}
+@media (max-width: 576px) {
+  .users {
+    font-size: var(--small-size);
+  }
 }
 .users table {
   width: 100%;
@@ -822,6 +878,12 @@ footer.main-footer .foot span {
   border: 1px solid var(--gray-200);
   text-align: center;
 }
+@media (max-width: 576px) {
+  .users table th,
+  .users table td {
+    padding: 8px;
+  }
+}
 .users table th {
   background-color: var(--primary-500);
   color: var(--gray-00);
@@ -830,6 +892,12 @@ footer.main-footer .foot span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+@media (max-width: 576px) {
+  .users table td {
+    overflow: scroll;
+    text-overflow: clip;
+  }
+}
 .users table td a {
   color: var(--gray-900);
 }
@@ -837,14 +905,16 @@ footer.main-footer .foot span {
   font-size: var(--big-size);
   transition: 0.3s;
 }
+@media (max-width: 576px) {
+  .users table td a i {
+    font-size: var(--medium-size);
+  }
+}
 .users table td a i.delete {
   margin-right: 10px;
-}
-.users table td a i.delete:hover {
   color: var(--danger-500);
-  margin-right: 10px;
 }
-.users table td a i.edit:hover {
+.users table td a i.edit {
   color: var(--success-500);
 }
 

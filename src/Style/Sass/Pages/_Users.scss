@@ -1,5 +1,8 @@
 .users {
   padding: 0 20px 20px;
+  @include small {
+    font-size: var(--small-size);
+  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -13,6 +16,9 @@
       padding: 12px;
       border: 1px solid var(--gray-200);
       text-align: center;
+      @include small {
+        padding: 8px;
+      }
     }
     th {
       background-color: var(--primary-500);
@@ -21,19 +27,23 @@
     td {
       overflow: hidden;
       text-overflow: ellipsis;
+      @include small {
+        overflow: scroll;
+        text-overflow: clip;
+      }
       a {
         color: var(--gray-900);
         i {
           font-size: var(--big-size);
           transition: 0.3s;
+          @include small {
+            font-size: var(--medium-size);
+          }
           &.delete {
             margin-right: 10px;
-            &:hover {
-              color: var(--danger-500);
-              margin-right: 10px;
-            }
+            color: var(--danger-500);
           }
-          &.edit:hover {
+          &.edit {
             color: var(--success-500);
           }
         }

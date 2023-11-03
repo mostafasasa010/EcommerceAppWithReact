@@ -16,6 +16,12 @@ header.main-header {
   }
   &.dash {
     margin-top: 0px;
+    + .menu-phones {
+      top: -70px;
+      &.active {
+        top: 80px;
+      }
+    }
   }
   .container {
     > div {
@@ -27,6 +33,9 @@ header.main-header {
         align-items: center;
         > i {
           display: none;
+          &.second {
+            background-color: var(--primary-500);
+          }
           @include small {
             display: block;
             padding: 6px;
@@ -97,6 +106,7 @@ header.main-header {
     }
   }
 }
+
 .menu-phones {
   position: fixed;
   width: 100%;
@@ -108,8 +118,19 @@ header.main-header {
   background-color: var(--secondary-700);
   padding: 10px 0;
   transition: 0.3s;
+  z-index: 999;
   &.active {
     top: 130px;
+  }
+  &.second {
+    li {
+      a {
+        background-color: var(--primary-500);
+        &.active {
+          background-color: var(--primary-900);
+        }
+      }
+    }
   }
   li {
     width: 100%;
@@ -122,9 +143,13 @@ header.main-header {
       text-align: center;
       color: var(--gray-00);
       padding: 10px;
-      background-color: var(--secondary-900);
+      background-color: var(--secondary-800);
       margin: 0 auto;
       border-radius: 4px;
+      transition: 0.3s;
+      &.active {
+        background-color: var(--secondary-900);
+      }
       i {
         margin-right: 10px;
       }

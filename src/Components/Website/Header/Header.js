@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Cookie from "cookie-universal";
 
 // Componente Header
@@ -50,23 +50,27 @@ function Header() {
       </header>
       <ul className="menu-phones">
         <li>
-          <Link to="/fav" onClick={handleClickLink}>
+          <NavLink activeclassname="active" to="/fav" onClick={handleClickLink}>
             <i className="ph ph-heart"></i>
             Fav Products
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/user" onClick={handleClickLink}>
+          <NavLink
+            activeclassname="active"
+            to="/user"
+            onClick={handleClickLink}
+          >
             <i className="ph ph-user"></i>
             Account Page
-          </Link>
+          </NavLink>
         </li>
         <li>
           {cookie.get("cookieRole") === "admin" && (
-            <Link to="/dashboard">
+            <NavLink activeclassname="active" to="/dashboard">
               <i className="ph ph-align-bottom"></i>
               Dashboard
-            </Link>
+            </NavLink>
           )}
         </li>
       </ul>

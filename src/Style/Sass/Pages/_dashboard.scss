@@ -4,5 +4,10 @@
     width: calc(75% - 10px);
     margin-left: calc(25% + 10px);
     margin-top: 115px;
+    @include small {
+      margin-top: 100px;
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }

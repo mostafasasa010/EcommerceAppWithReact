@@ -4,11 +4,21 @@
   height: calc(100vh - 100px);
   left: 10px;
   top: 115px;
+  @include small {
+    top: 100px;
+  }
   > div {
     box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--gray-100);
     border-radius: 4px;
     padding: 10px 0;
+    background-color: var(--gray-00);
+    @include small {
+      display: none;
+    }
+    &.active {
+      left: 0;
+    }
     ul {
       width: 100%;
       li {
@@ -20,12 +30,18 @@
           color: var(--gray-600);
           background-color: var(--gray-00);
           transition: 0.3s;
+          @include small {
+            text-align: center;
+          }
           &.active {
             color: var(--gray-00);
             background-color: var(--primary-500);
           }
           i {
             margin-right: 10px;
+            @include small {
+              margin: 0;
+            }
           }
         }
       }
