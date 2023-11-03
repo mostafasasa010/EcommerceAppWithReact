@@ -25,8 +25,41 @@ header.main-header {
       .right {
         display: flex;
         align-items: center;
+        > i {
+          display: none;
+          @include small {
+            display: block;
+            padding: 6px;
+            color: var(--gray-00);
+            background-color: var(--secondary-900);
+            font-size: var(--big-extra-size);
+            border-radius: 4px;
+            margin-right: 20px;
+          }
+        }
         a {
           position: relative;
+          &.btn-dashboard {
+            color: var(--gray-00);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            padding: 10px 12px;
+            background-color: var(--secondary-900);
+            border-radius: 4px;
+            transition: 0.3s;
+            @include small {
+              display: none;
+            }
+            i {
+              transition: 0.3s;
+            }
+            &:hover,
+            &:hover i {
+              color: var(--secondary-300);
+            }
+          }
           &:not(:last-of-type) {
             margin-right: 15px;
             @include small {
@@ -54,6 +87,46 @@ header.main-header {
             color: var(--gray-00);
           }
         }
+        .nav-fav,
+        .nav-user {
+          @include small {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.menu-phones {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: -20px;
+  background-color: var(--secondary-700);
+  padding: 10px 0;
+  transition: 0.3s;
+  &.active {
+    top: 130px;
+  }
+  li {
+    width: 100%;
+    &:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+    a {
+      display: block;
+      width: 90%;
+      text-align: center;
+      color: var(--gray-00);
+      padding: 10px;
+      background-color: var(--secondary-900);
+      margin: 0 auto;
+      border-radius: 4px;
+      i {
+        margin-right: 10px;
       }
     }
   }

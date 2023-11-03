@@ -240,6 +240,11 @@ header.main-header .search-header {
     width: 300px;
   }
 }
+@media (max-width: 768px) {
+  header.main-header .search-header {
+    display: none;
+  }
+}
 @media (max-width: 576px) {
   header.main-header .search-header {
     display: none;
@@ -372,8 +377,44 @@ header.main-header .container > div .right {
   display: flex;
   align-items: center;
 }
+header.main-header .container > div .right > i {
+  display: none;
+}
+@media (max-width: 576px) {
+  header.main-header .container > div .right > i {
+    display: block;
+    padding: 6px;
+    color: var(--gray-00);
+    background-color: var(--secondary-900);
+    font-size: var(--big-extra-size);
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+}
 header.main-header .container > div .right a {
   position: relative;
+}
+header.main-header .container > div .right a.btn-dashboard {
+  color: var(--gray-00);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 12px;
+  background-color: var(--secondary-900);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+@media (max-width: 576px) {
+  header.main-header .container > div .right a.btn-dashboard {
+    display: none;
+  }
+}
+header.main-header .container > div .right a.btn-dashboard i {
+  transition: 0.3s;
+}
+header.main-header .container > div .right a.btn-dashboard:hover, header.main-header .container > div .right a.btn-dashboard:hover i {
+  color: var(--secondary-300);
 }
 header.main-header .container > div .right a:not(:last-of-type) {
   margin-right: 15px;
@@ -402,6 +443,47 @@ header.main-header .container > div .right a > i {
   display: block;
   font-size: var(--big-size);
   color: var(--gray-00);
+}
+@media (max-width: 576px) {
+  header.main-header .container > div .right .nav-fav,
+  header.main-header .container > div .right .nav-user {
+    display: none;
+  }
+}
+
+.menu-phones {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: -20px;
+  background-color: var(--secondary-700);
+  padding: 10px 0;
+  transition: 0.3s;
+}
+.menu-phones.active {
+  top: 130px;
+}
+.menu-phones li {
+  width: 100%;
+}
+.menu-phones li:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+.menu-phones li a {
+  display: block;
+  width: 90%;
+  text-align: center;
+  color: var(--gray-00);
+  padding: 10px;
+  background-color: var(--secondary-900);
+  margin: 0 auto;
+  border-radius: 4px;
+}
+.menu-phones li a i {
+  margin-right: 10px;
 }
 
 footer.main-footer {

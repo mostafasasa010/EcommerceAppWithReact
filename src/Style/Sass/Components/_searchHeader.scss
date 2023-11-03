@@ -8,6 +8,9 @@ header.main-header .search-header {
   @include large {
     width: 300px;
   }
+  @include medium {
+    display: none;
+  }
   @include small {
     display: none;
   }
