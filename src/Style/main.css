@@ -984,4 +984,42 @@ footer.main-footer .foot span {
   color: var(--danger-500);
 }
 
+form.add-category h1 {
+  margin-bottom: 20px;
+}
+form.add-category label {
+  margin-right: 5px;
+  background-color: var(--primary-500);
+  border-radius: 4px;
+  padding: 10px 12px;
+  color: var(--gray-00);
+  font-size: var(--medium-extra-size);
+  border: 2px solid var(--primary-500);
+}
+form.add-category input {
+  padding: 10px 12px;
+  border: 2px solid var(--primary-500);
+  outline: none;
+  border-radius: 4px;
+  background-color: var(--primary-200);
+  color: var(--primary-700);
+  font-size: var(--medium-extra-size);
+}
+form.add-category button {
+  display: block;
+  margin-top: 15px;
+  padding: 10px 12px;
+  font-size: var(--medium-extra-size);
+  border: 2px solid var(--primary-500);
+  color: var(--gray-00);
+  background-color: var(--primary-500);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form.add-category button:hover {
+  color: var(--primary-500);
+  background-color: var(--gray-00);
+}
+
 /*# sourceMappingURL=main.css.map */

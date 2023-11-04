@@ -10,6 +10,7 @@ import Products from "./Pages/Dashboard/Products";
 import Users from "./Pages/Dashboard/Users";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import ShowUser from "./Pages/Dashboard/ShowUser";
+import AddCategory from "./Pages/Dashboard/AddCategory";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="dashboard/" element={<Dashboard />}>
           <Route path="users" element={<Users />} />
           <Route path="products" element={<Products />} />
+          <Route path="addCategory" element={<AddCategory />} />
           <Route path="users/show/:id" element={<ShowUser />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />

@@ -8,3 +8,4 @@ export const SIGNUP = `signUp/`;
 export const LOGIN = `logIn/`;
 export const USERID = `${cookie.get("cookieId")}/`;
 export const PRODUCTS = `product/`;
+export const CATEGORY = `category/`;
