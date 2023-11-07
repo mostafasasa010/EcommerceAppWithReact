@@ -27,7 +27,7 @@ function Header() {
             </div>
             <div className="right">
               {cookie.get("cookieRole") === "admin" && (
-                <Link className="btn-dashboard" to="/dashboard">
+                <Link className="btn-dashboard" to="/dashboard/users">
                   <i className="ph ph-align-bottom"></i>
                   Dashboard
                 </Link>
@@ -67,7 +67,7 @@ function Header() {
         </li>
         <li>
           {cookie.get("cookieRole") === "admin" && (
-            <NavLink activeclassname="active" to="/dashboard">
+            <NavLink activeclassname="active" to="/dashboard/users">
               <i className="ph ph-align-bottom"></i>
               Dashboard
             </NavLink>

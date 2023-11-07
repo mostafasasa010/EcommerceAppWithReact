@@ -24,7 +24,11 @@ function Products() {
         <tr key={i}>
           <td>{i + 1}</td>
           <td>{product.name}</td>
-          <td>{product.category.name}</td>
+          <td>
+            {product.category !== undefined
+              ? product.category.name
+              : "Not Found"}
+          </td>
           <td>{product.inStock}</td>
           <td>{product.price["0"].finalPrice}</td>
         </tr>

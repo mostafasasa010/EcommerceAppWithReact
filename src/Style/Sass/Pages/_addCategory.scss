@@ -36,4 +36,10 @@ form.add-category {
       background-color: var(--gray-00);
     }
   }
+  p {
+    color: var(--danger-500);
+    margin-top: 10px;
+    font-size: var(--medium-extra-size);
+    font-weight: var(--bold-weight);
+  }
 }

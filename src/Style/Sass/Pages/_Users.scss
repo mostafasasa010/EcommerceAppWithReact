@@ -1,5 +1,6 @@
 .users,
-.products-dash {
+.products-dash,
+.categories-dash {
   @include small {
     font-size: var(--small-size);
   }
@@ -54,5 +55,11 @@
         }
       }
     }
+  }
+}
+
+.categories-dash {
+  img {
+    width: 50px;
   }
 }

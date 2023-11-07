@@ -23,6 +23,12 @@ function SideBarDash() {
               <span>Add Category</span>
             </NavLink>
           </li>
+          <li>
+            <NavLink activeclassname="active" to="categories">
+              <i className="ph ph-cards"></i>
+              <span>Categories</span>
+            </NavLink>
+          </li>
         </ul>
       </div>
     </div>

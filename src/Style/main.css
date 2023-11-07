@@ -858,25 +858,30 @@ footer.main-footer .foot span {
 
 @media (max-width: 576px) {
   .users,
-  .products-dash {
+  .products-dash,
+  .categories-dash {
     font-size: var(--small-size);
   }
 }
 .users table,
-.products-dash table {
+.products-dash table,
+.categories-dash table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
   overflow: hidden;
 }
 .users table tr:nth-child(even),
-.products-dash table tr:nth-child(even) {
+.products-dash table tr:nth-child(even),
+.categories-dash table tr:nth-child(even) {
   background-color: rgba(255, 231, 214, 0.5);
 }
 .users table th,
 .users table td,
 .products-dash table th,
-.products-dash table td {
+.products-dash table td,
+.categories-dash table th,
+.categories-dash table td {
   padding: 12px;
   border: 1px solid var(--gray-200);
   text-align: center;
@@ -885,19 +890,24 @@ footer.main-footer .foot span {
   .users table th,
   .users table td,
   .products-dash table th,
-  .products-dash table td {
+  .products-dash table td,
+  .categories-dash table th,
+  .categories-dash table td {
     padding: 8px;
   }
 }
 .users table th,
-.products-dash table th {
+.products-dash table th,
+.categories-dash table th {
   background-color: var(--primary-500);
   color: var(--gray-00);
 }
 .users table td,
 .users table th,
 .products-dash table td,
-.products-dash table th {
+.products-dash table th,
+.categories-dash table td,
+.categories-dash table th {
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -905,7 +915,9 @@ footer.main-footer .foot span {
   .users table td,
   .users table th,
   .products-dash table td,
-  .products-dash table th {
+  .products-dash table th,
+  .categories-dash table td,
+  .categories-dash table th {
     overflow: scroll;
     text-overflow: clip;
   }
@@ -913,13 +925,17 @@ footer.main-footer .foot span {
 .users table td a,
 .users table th a,
 .products-dash table td a,
-.products-dash table th a {
+.products-dash table th a,
+.categories-dash table td a,
+.categories-dash table th a {
   color: var(--gray-900);
 }
 .users table td a i,
 .users table th a i,
 .products-dash table td a i,
-.products-dash table th a i {
+.products-dash table th a i,
+.categories-dash table td a i,
+.categories-dash table th a i {
   font-size: var(--big-size);
   transition: 0.3s;
 }
@@ -927,29 +943,41 @@ footer.main-footer .foot span {
   .users table td a i,
   .users table th a i,
   .products-dash table td a i,
-  .products-dash table th a i {
+  .products-dash table th a i,
+  .categories-dash table td a i,
+  .categories-dash table th a i {
     font-size: var(--medium-size);
   }
 }
 .users table td a i.delete,
 .users table th a i.delete,
 .products-dash table td a i.delete,
-.products-dash table th a i.delete {
+.products-dash table th a i.delete,
+.categories-dash table td a i.delete,
+.categories-dash table th a i.delete {
   margin-right: 10px;
   color: var(--danger-500);
 }
 .users table td a i.edit,
 .users table th a i.edit,
 .products-dash table td a i.edit,
-.products-dash table th a i.edit {
+.products-dash table th a i.edit,
+.categories-dash table td a i.edit,
+.categories-dash table th a i.edit {
   color: var(--success-500);
 }
 .users table td a i.show,
 .users table th a i.show,
 .products-dash table td a i.show,
-.products-dash table th a i.show {
+.products-dash table th a i.show,
+.categories-dash table td a i.show,
+.categories-dash table th a i.show {
   color: var(--secondary-500);
   margin-left: 10px;
+}
+
+.categories-dash img {
+  width: 50px;
 }
 
 .show-user h3 {
@@ -1020,6 +1048,12 @@ form.add-category button {
 form.add-category button:hover {
   color: var(--primary-500);
   background-color: var(--gray-00);
+}
+form.add-category p {
+  color: var(--danger-500);
+  margin-top: 10px;
+  font-size: var(--medium-extra-size);
+  font-weight: var(--bold-weight);
 }
 
 /*# sourceMappingURL=main.css.map */
