@@ -12,6 +12,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import ShowUser from "./Pages/Dashboard/ShowUser";
 import AddCategory from "./Pages/Dashboard/AddCategory";
 import AllCategory from "./Pages/Dashboard/AllCategory";
+import ShowProduct from "./Pages/Dashboard/ShowProduct";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="addCategory" element={<AddCategory />} />
           <Route path="categories" element={<AllCategory />} />
           <Route path="users/show/:id" element={<ShowUser />} />
+          <Route path="products/show/:id" element={<ShowProduct />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />

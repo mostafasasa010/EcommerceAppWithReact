@@ -58,7 +58,7 @@ function Login() {
         cookie.set("cookieRole", jsonPayload.role);
         if (res.status === 200) {
           if (cookie.get("cookieRole") === "admin") {
-            navigate("/dashboard");
+            navigate("/dashboard/users");
           } else {
             navigate("/");
           }
