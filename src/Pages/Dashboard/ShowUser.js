@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BaseApi, USER } from "../../API/Api";
 import Cookie from "cookie-universal";
 import Loading from "../../Components/Loading/Loading";
@@ -8,26 +8,22 @@ import Loading from "../../Components/Loading/Loading";
 function ShowUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [id, setId] = useState("");
   const [role, setRole] = useState("");
   const [loading, setLoading] = useState(true);
   const cookie = Cookie();
+  const { id } = useParams();
   const [isDeleted, setIsDeleted] = useState(false);
   const navigate = useNavigate();
   try {
     async function getUserData() {
-      const res = await axios.get(
-        `${BaseApi}${USER}${cookie.get("cookieIdShow")}`,
-        {
-          headers: {
-            Authorization: "Bearer " + cookie.get("cookieToken"),
-          },
-        }
-      );
+      const res = await axios.get(`${BaseApi}${USER}${id}`, {
+        headers: {
+          Authorization: "Bearer " + cookie.get("cookieToken"),
+        },
+      });
       setLoading(false);
       setName(res.data.data.data.name);
       setEmail(res.data.data.data.email);
-      setId(res.data.data.data._id);
       setRole(res.data.data.data.role);
     }
     useEffect(() => {

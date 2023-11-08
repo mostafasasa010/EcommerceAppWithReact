@@ -15,7 +15,6 @@ function Products() {
       const res = await axios(`${BaseApi}${PRODUCTS}`);
       setProducts(res.data.data.data);
       setLoading(false);
-      console.log(res);
     }
     useEffect(() => {
       getAllProducts();
@@ -33,7 +32,6 @@ function Products() {
       if (res.status === 204) {
         setIsDeleted(!isDeleted);
       }
-      console.log(res);
     } catch (err) {
       console.log(err);
     }
