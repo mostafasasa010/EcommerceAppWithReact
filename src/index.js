@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 // Libarary Fils
 import "./Style/Libs/regular/style.css";
 import "./Style/Libs/duotone/style.css";
+import "./Style/Libs/fill/style.css";
 // Style File
 import "./Style/main.css";
 // App File

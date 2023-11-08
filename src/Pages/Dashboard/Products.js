@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BaseApi, PRODUCTS } from "../../API/Api";
+import { BaseApi, IMAGES, PRODUCTS } from "../../API/Api";
 import { useEffect, useState } from "react";
 import Loading from "../../Components/Loading/Loading";
 import { Link } from "react-router-dom";
@@ -47,6 +47,9 @@ function Products() {
               ? product.category.name
               : "Not Found"}
           </td>
+          <td>
+            <img src={`${IMAGES}${PRODUCTS}${product.image}`} alt="Pic" />
+          </td>
           <td>{product.inStock}</td>
           <td>{product.price["0"].finalPrice}</td>
           <td>
@@ -72,6 +75,7 @@ function Products() {
               <th>Id</th>
               <th>Name</th>
               <th>Category</th>
+              <th>Image</th>
               <th>In Stock</th>
               <th>Price</th>
               <th>Action</th>

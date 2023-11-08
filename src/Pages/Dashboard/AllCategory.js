@@ -43,10 +43,7 @@ function AllCategory() {
           <td>{i + 1}</td>
           <td>{category.name}</td>
           <td>
-            <img
-              src={`https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-11-red-back.png`}
-              alt="Pic"
-            />
+            <img src={`${IMAGES}${CATEGORY}${category.image}`} alt="Pic" />
           </td>
           <td>
             <Link onClick={() => handleDelete(category._id)}>

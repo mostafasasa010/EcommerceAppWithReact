@@ -66,6 +66,26 @@ function HeaderDash() {
             Products
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            activeclassname="active"
+            to="/dashboard/addCategory"
+            onClick={handleClickLink}
+          >
+            <i className="ph ph-plus"></i>
+            Add Category
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeclassname="active"
+            to="/dashboard/categories"
+            onClick={handleClickLink}
+          >
+            <i className="ph ph-cards"></i>
+            Categories
+          </NavLink>
+        </li>
       </ul>
     </>
   );

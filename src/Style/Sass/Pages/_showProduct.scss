@@ -1,0 +1,94 @@
+.show-product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  .image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 4px solid var(--primary-500);
+    img {
+      width: 500px;
+      @include small {
+        width: 250px;
+      }
+    }
+  }
+  h1 {
+    color: var(--primary-900);
+    margin-bottom: 10px;
+  }
+  .data {
+    padding: 15px;
+    background-color: var(--primary-500);
+    border-radius: 4px;
+    color: var(--gray-00);
+    margin-bottom: 20px;
+    p {
+      margin-left: 10px;
+      &:not(:last-of-type) {
+        margin-bottom: 5px;
+      }
+      i.ph-fill {
+        color: var(--warning-400);
+      }
+      span {
+        margin-right: 5px;
+        font-size: var(--medium-extra-size);
+        font-weight: var(--bold-weight);
+        color: var(--primary-900);
+        &.rating-num {
+          margin: 0 0 0 5px;
+        }
+        &.no-stock {
+          color: var(--warning-500);
+        }
+        &.stock {
+          color: var(--secondary-600);
+        }
+      }
+    }
+  }
+  .re-cards {
+    padding: 15px;
+    background-color: var(--primary-500);
+    border-radius: 4px;
+    color: var(--gray-00);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    .reviews {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      .review-card {
+        width: calc((100% - 30px) / 4);
+        padding: 15px;
+        border-radius: 6px;
+        background-color: var(--primary-900);
+        @include medium {
+          width: calc((100% - 10px) / 2);
+        }
+        @include small {
+          width: calc(100%);
+        }
+        i.ph-fill {
+          color: var(--warning-400);
+        }
+        p {
+          span {
+            margin-right: 5px;
+            color: var(--primary-500);
+            font-weight: var(--bold-weight);
+            &.rating-num {
+              margin: 0 0 0 5px;
+            }
+          }
+          &:not(:last-of-type) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

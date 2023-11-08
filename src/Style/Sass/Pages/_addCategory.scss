@@ -19,6 +19,9 @@ form.add-category {
     background-color: var(--primary-200);
     color: var(--primary-700);
     font-size: var(--medium-extra-size);
+    @include small {
+      margin-top: 20px;
+    }
   }
   button {
     display: block;
