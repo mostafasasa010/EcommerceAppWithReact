@@ -13,6 +13,7 @@ import ShowUser from "./Pages/Dashboard/ShowUser";
 import AddCategory from "./Pages/Dashboard/AddCategory";
 import AllCategory from "./Pages/Dashboard/AllCategory";
 import ShowProduct from "./Pages/Dashboard/ShowProduct";
+import AddProduct from "./Pages/Dashboard/AddProduct";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="categories" element={<AllCategory />} />
           <Route path="users/show/:id" element={<ShowUser />} />
           <Route path="products/show/:id" element={<ShowProduct />} />
+          <Route path="addProduct" element={<AddProduct />} />
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />

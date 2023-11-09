@@ -24,17 +24,17 @@ function HeaderDash() {
             </div>
             <div className="right">
               <i onClick={handleClick} className="ph ph-list second"></i>
-              <Link to="/cart" className="nav-cart">
+              <NavLink activeclassname="active" to="/cart" className="nav-cart">
                 <i className="ph ph-shopping-cart-simple"></i>
                 <span>2</span>
-              </Link>
-              <Link to="/fav" className="nav-fav">
+              </NavLink>
+              <NavLink activeclassname="active" to="/fav" className="nav-fav">
                 <i className="ph ph-heart"></i>
                 <span>3</span>
-              </Link>
-              <Link to="/user" className="nav-user">
+              </NavLink>
+              <NavLink activeclassname="active" to="/user" className="nav-user">
                 <i className="ph ph-user"></i>
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -67,13 +67,9 @@ function HeaderDash() {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            activeclassname="active"
-            to="/dashboard/addCategory"
-            onClick={handleClickLink}
-          >
+          <NavLink activeclassname="active" to="addProduct">
             <i className="ph ph-plus"></i>
-            Add Category
+            <span>Add Product</span>
           </NavLink>
         </li>
         <li>
@@ -84,6 +80,16 @@ function HeaderDash() {
           >
             <i className="ph ph-cards"></i>
             Categories
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeclassname="active"
+            to="/dashboard/addCategory"
+            onClick={handleClickLink}
+          >
+            <i className="ph ph-plus"></i>
+            Add Category
           </NavLink>
         </li>
       </ul>

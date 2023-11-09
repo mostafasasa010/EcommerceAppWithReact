@@ -369,7 +369,7 @@ header.main-header.dash {
   margin-top: 0px;
 }
 header.main-header.dash + .menu-phones {
-  top: -156px;
+  top: -200px;
 }
 header.main-header.dash + .menu-phones.active {
   top: 80px;

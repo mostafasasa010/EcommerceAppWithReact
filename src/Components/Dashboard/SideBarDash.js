@@ -18,15 +18,21 @@ function SideBarDash() {
             </NavLink>
           </li>
           <li>
-            <NavLink activeclassname="active" to="addCategory">
+            <NavLink activeclassname="active" to="addProduct">
               <i className="ph ph-plus"></i>
-              <span>Add Category</span>
+              <span>Add Product</span>
             </NavLink>
           </li>
           <li>
             <NavLink activeclassname="active" to="categories">
               <i className="ph ph-cards"></i>
               <span>Categories</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeclassname="active" to="addCategory">
+              <i className="ph ph-plus"></i>
+              <span>Add Category</span>
             </NavLink>
           </li>
         </ul>
