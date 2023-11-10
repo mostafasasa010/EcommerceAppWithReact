@@ -278,6 +278,14 @@ header.main-header .search-header > i {
   transform: translateY(-50%);
 }
 
+.main-section {
+  padding: 15px;
+  background-color: var(--gray-50);
+  box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--gray-100);
+  border-radius: 4px;
+}
+
 .container {
   width: 75%;
   margin: 0 auto;
@@ -846,7 +854,7 @@ footer.main-footer .foot span {
   width: calc(75% - 10px);
   margin-left: calc(25% + 10px);
   margin-top: 115px;
-  padding: 0 20px;
+  padding: 0 20px 20px;
 }
 @media (max-width: 576px) {
   .dashboard main {
@@ -1014,6 +1022,7 @@ footer.main-footer .foot span {
 }
 
 form.add-category h1 {
+  color: var(--gray-900);
   margin-bottom: 20px;
 }
 form.add-category label {
@@ -1159,6 +1168,90 @@ form.add-category p {
 }
 .show-product .re-cards .reviews .review-card p:not(:last-of-type) {
   margin-bottom: 10px;
+}
+
+.add-product h1 {
+  color: var(--gray-900);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.add-product > div {
+  display: flex;
+  flex-direction: column;
+}
+.add-product > div label {
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 576px) {
+  .add-product > div label {
+    font-size: 12px;
+  }
+}
+.add-product > div label input {
+  display: block;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  padding: 10px 8px;
+  border-radius: 4px;
+}
+.add-product > div label select {
+  display: block;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  padding: 10px 8px;
+  border-radius: 4px;
+}
+.add-product > div label select option {
+  border: none;
+  outline: none;
+}
+.add-product > div label p {
+  margin-left: 20px;
+  color: var(--danger-500);
+}
+.add-product > div > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.add-product > div > div label.discount {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.add-product > div > div label.discount input {
+  margin: 0;
+}
+.add-product > div > div label.discount select {
+  margin: 0;
+}
+.add-product > div > div label span {
+  background-color: var(--primary-500);
+  color: var(--gray-00);
+  margin-left: 5px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-weight: var(--bold-weight);
+}
+.add-product button {
+  display: block;
+  margin-top: 15px;
+  padding: 10px 12px;
+  font-size: var(--medium-extra-size);
+  border: 2px solid var(--primary-500);
+  color: var(--gray-00);
+  background-color: var(--primary-500);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.add-product button:hover {
+  color: var(--primary-500);
+  background-color: var(--gray-00);
 }
 
 /*# sourceMappingURL=main.css.map */

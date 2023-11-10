@@ -33,7 +33,7 @@ function AddCategory() {
   }
 
   return (
-    <form className="add-category" onSubmit={handleSubmit}>
+    <form className="add-category main-section" onSubmit={handleSubmit}>
       <h1>Add Category</h1>
       <label htmlFor="category">Category Name:</label>
       <input

@@ -67,82 +67,97 @@ function AddProduct() {
       }
     }
   }
+  if (originalP == 0) {
+    setOriginalP(1);
+  }
   return (
-    <form className="add-product" onSubmit={handleSubmit}>
+    <form className="add-product main-section" onSubmit={handleSubmit}>
       <h1>Add Product</h1>
-      <label htmlFor="product">
-        Product Name:
-        <input
-          id="product"
-          name="product"
-          onChange={(e) => setName(e.target.value)}
-        />
-        {name.length === 0 && msgError && <p>Requird Product Name</p>}
-      </label>
-      <label htmlFor="category">
-        Category:
-        <select
-          id="category"
-          name="Category"
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="">Select A Category</option>
-          {categories}
-        </select>
-        {category === "" && msgError && <p>Requird Select Category</p>}
-      </label>
-      <label htmlFor="brand">
-        Brand Name:
-        <input
-          id="brand"
-          name="brand"
-          onChange={(e) => setBrand(e.target.value)}
-        />
-      </label>
-      <label htmlFor="stock">
-        Stock Namber:
-        <input
-          type="number"
-          id="stock"
-          name="stock"
-          onChange={(e) => setStock(e.target.value)}
-        />
-      </label>
       <div>
-        <label htmlFor="price">
-          Price:
+        <label htmlFor="product">
+          Product:
           <input
-            id="price"
-            placeholder="Original Price"
-            type="number"
-            onChange={(e) => setOriginalP(e.target.value)}
+            id="product"
+            name="product"
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Product Name"
           />
-          {originalP === 0 && msgError && <p>Requird Enter Price</p>}
+          {name.length === 0 && msgError && <p>Requird Product Name</p>}
         </label>
-        <label htmlFor="discount">
-          Discount:
-          <select id="discount" onChange={(e) => setdiscountOp(e.target.value)}>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
+        <label htmlFor="category">
+          Category:
+          <select
+            id="category"
+            name="Category"
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">Select A Category</option>
+            {categories}
           </select>
-          {discountOp === "Yes" && (
+          {category === "" && msgError && <p>Requird Select Category</p>}
+        </label>
+        <label htmlFor="brand">
+          Brand:
+          <input
+            id="brand"
+            name="brand"
+            onChange={(e) => setBrand(e.target.value)}
+            placeholder="Brand Name"
+          />
+        </label>
+        <label htmlFor="stock">
+          Stock:
+          <input
+            type="number"
+            id="stock"
+            name="stock"
+            onChange={(e) => setStock(e.target.value)}
+            placeholder="Stock Namber"
+          />
+        </label>
+        <div>
+          <label htmlFor="price">
+            Price:
             <input
+              id="price"
+              placeholder="Original Price"
               type="number"
-              placeholder="Discount"
-              onChange={(e) => setdiscountP(e.target.value)}
+              onChange={(e) => {
+                setOriginalP(e.target.value);
+              }}
             />
-          )}
-        </label>
-        <label htmlFor="percentage">
-          The discount percentage is:
-          <span id="percentage">{(discountP * 100) / originalP + "%"}</span>
-        </label>
-        <label htmlFor="finalP">
-          Final Price:
-          <span id="finalP">
-            {originalP - discountP > 0 ? originalP - discountP + "$" : "0"}
-          </span>
-        </label>
+            {(+originalP === 0 || originalP.length === 0) && msgError ? (
+              <p>Requird Enter Price</p>
+            ) : null}
+          </label>
+          <label htmlFor="discount" className="discount">
+            Discount:
+            <select
+              id="discount"
+              onChange={(e) => setdiscountOp(e.target.value)}
+            >
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+            {discountOp === "Yes" && (
+              <input
+                type="number"
+                placeholder="Discount"
+                onChange={(e) => setdiscountP(e.target.value)}
+              />
+            )}
+          </label>
+          <label htmlFor="percentage">
+            The discount percentage is:
+            <span id="percentage">{(discountP * 100) / originalP + "%"}</span>
+          </label>
+          <label htmlFor="finalP">
+            Final Price:
+            <span id="finalP">
+              {originalP - discountP > 0 ? originalP - discountP + "$" : "0"}
+            </span>
+          </label>
+        </div>
       </div>
       <button type="submit" onClick={() => setMsgError(true)}>
         Add
