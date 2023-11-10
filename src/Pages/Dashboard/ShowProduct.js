@@ -105,15 +105,21 @@ function ShowProduct() {
           </p>
           <p>
             <span>rating: </span>
-            {[...Array(Math.round(rating))].map((fillStar, i) => {
-              return <i key={i} className="ph-fill ph-star"></i>;
-            })}
-            {[...Array(Math.round(counter))].map((star, i) => {
-              return <i key={i} className="ph ph-star"></i>;
-            })}
+            {rating === undefined &&
+              [...Array(5)].map((star, i) => {
+                return <i key={i} className="ph ph-star"></i>;
+              })}
+            {rating > 0 &&
+              [...Array(Math.round(rating))].map((fillStar, i) => {
+                return <i key={i} className="ph-fill ph-star"></i>;
+              })}
+            {rating > 0 &&
+              [...Array(Math.round(counter))].map((star, i) => {
+                return <i key={i} className="ph ph-star"></i>;
+              })}
             <span className="rating-num">
               {"("}
-              {rating}
+              {rating ? rating : "0"}
               {")"}
             </span>
           </p>
