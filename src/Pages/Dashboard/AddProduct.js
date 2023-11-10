@@ -159,7 +159,7 @@ function AddProduct() {
           </label>
         </div>
       </div>
-      <button type="submit" onClick={() => setMsgError(true)}>
+      <button className="btn" type="submit" onClick={() => setMsgError(true)}>
         Add
       </button>
     </form>

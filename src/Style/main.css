@@ -111,6 +111,23 @@ textarea {
   font-family: var(--main-family);
 }
 
+.btn {
+  display: block;
+  margin-top: 15px;
+  padding: 10px 12px;
+  font-size: var(--medium-extra-size);
+  border: 2px solid var(--primary-500);
+  color: var(--gray-00);
+  background-color: var(--primary-500);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  color: var(--primary-500);
+  background-color: var(--gray-00);
+}
+
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);
@@ -1048,22 +1065,6 @@ form.add-category input {
     margin-top: 20px;
   }
 }
-form.add-category button {
-  display: block;
-  margin-top: 15px;
-  padding: 10px 12px;
-  font-size: var(--medium-extra-size);
-  border: 2px solid var(--primary-500);
-  color: var(--gray-00);
-  background-color: var(--primary-500);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-form.add-category button:hover {
-  color: var(--primary-500);
-  background-color: var(--gray-00);
-}
 form.add-category p {
   color: var(--danger-500);
   margin-top: 10px;
@@ -1184,6 +1185,9 @@ form.add-category p {
   margin-bottom: 5px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 100%;
 }
 @media (max-width: 576px) {
   .add-product > div label {
@@ -1192,15 +1196,14 @@ form.add-category p {
 }
 .add-product > div label input {
   display: block;
-  margin-left: 10px;
   border: none;
   outline: none;
   padding: 10px 8px;
   border-radius: 4px;
+  max-width: 100%;
 }
 .add-product > div label select {
   display: block;
-  margin-left: 10px;
   border: none;
   outline: none;
   padding: 10px 8px;
@@ -1236,22 +1239,6 @@ form.add-category p {
   padding: 6px 8px;
   border-radius: 4px;
   font-weight: var(--bold-weight);
-}
-.add-product button {
-  display: block;
-  margin-top: 15px;
-  padding: 10px 12px;
-  font-size: var(--medium-extra-size);
-  border: 2px solid var(--primary-500);
-  color: var(--gray-00);
-  background-color: var(--primary-500);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.add-product button:hover {
-  color: var(--primary-500);
-  background-color: var(--gray-00);
 }
 
 /*# sourceMappingURL=main.css.map */

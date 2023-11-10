@@ -42,7 +42,9 @@ function AddCategory() {
         onChange={(e) => setName(e.target.value)}
       />
       {errorMessage && <p>{errorMessage}</p>}
-      <button type="submit">Add</button>
+      <button className="btn" type="submit">
+        Add
+      </button>
     </form>
   );
 }

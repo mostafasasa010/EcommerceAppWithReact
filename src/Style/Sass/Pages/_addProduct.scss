@@ -12,20 +12,22 @@
       margin-bottom: 5px;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 100%;
       @include small {
         font-size: 12px;
       }
       input {
         display: block;
-        margin-left: 10px;
         border: none;
         outline: none;
         padding: 10px 8px;
         border-radius: 4px;
+        max-width: 100%;
       }
       select {
         display: block;
-        margin-left: 10px;
         border: none;
         outline: none;
         padding: 10px 8px;
@@ -40,7 +42,6 @@
         color: var(--danger-500);
       }
     }
-
     > div {
       display: flex;
       flex-wrap: wrap;
@@ -65,22 +66,6 @@
           font-weight: var(--bold-weight);
         }
       }
-    }
-  }
-  button {
-    display: block;
-    margin-top: 15px;
-    padding: 10px 12px;
-    font-size: var(--medium-extra-size);
-    border: 2px solid var(--primary-500);
-    color: var(--gray-00);
-    background-color: var(--primary-500);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s;
-    &:hover {
-      color: var(--primary-500);
-      background-color: var(--gray-00);
     }
   }
 }
