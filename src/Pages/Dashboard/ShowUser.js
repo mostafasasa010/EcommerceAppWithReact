@@ -66,7 +66,9 @@ function ShowUser() {
         <p>
           <span>Role:</span> {role}
         </p>
-        <button onClick={handleDelete}>Delete</button>
+        <button className="btn-2" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </>
   );

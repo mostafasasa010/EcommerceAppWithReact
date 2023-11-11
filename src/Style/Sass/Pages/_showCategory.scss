@@ -1,0 +1,23 @@
+.show-category {
+  h1 {
+    margin-bottom: 20px;
+  }
+  .image {
+    text-align: center;
+    img {
+      width: 500px;
+    }
+  }
+  > div:not(:first-of-type) {
+    margin-top: 10px;
+    span {
+      font-size: var(--big-size);
+      &:not(:last-of-type) {
+        color: var(--primary-600);
+        font-weight: var(--bold-weight);
+        font-size: var(--big-light-size);
+        margin-right: 5px;
+      }
+    }
+  }
+}

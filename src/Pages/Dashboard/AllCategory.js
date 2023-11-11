@@ -49,6 +49,9 @@ function AllCategory() {
             <Link onClick={() => handleDelete(category._id)}>
               <i className="ph ph-trash delete"></i>
             </Link>
+            <Link to={`/dashboard/categories/show/${category._id}`}>
+              <i className="ph ph-eye show"></i>
+            </Link>
           </td>
         </tr>
       ));

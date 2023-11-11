@@ -15,6 +15,7 @@ import AllCategory from "./Pages/Dashboard/AllCategory";
 import ShowProduct from "./Pages/Dashboard/ShowProduct";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import EditUserByAdmin from "./Pages/Dashboard/Edit UserByAdmin";
+import ShowCategory from "./Pages/Dashboard/ShowCategory";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="products" element={<Products />} />
           <Route path="addCategory" element={<AddCategory />} />
           <Route path="categories" element={<AllCategory />} />
+          <Route path="categories/show/:id" element={<ShowCategory />} />
           <Route path="users/show/:id" element={<ShowUser />} />
           <Route path="products/show/:id" element={<ShowProduct />} />
           <Route path="addProduct" element={<AddProduct />} />
