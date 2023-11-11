@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.81e091ec.css",
+    "main.js": "/static/js/main.59b1e506.js",
+    "static/media/Phosphor-Duotone.svg": "/static/media/Phosphor-Duotone.3406bd4b532180847f4c.svg",
+    "static/media/Phosphor.svg": "/static/media/Phosphor.d5068d767b90c69f4c4b.svg",
+    "static/media/Phosphor-Fill.svg": "/static/media/Phosphor-Fill.74571e2a7e76cce14aaf.svg",
+    "static/media/Phosphor-Duotone.woff": "/static/media/Phosphor-Duotone.d9166b70504d269b32b9.woff",
+    "static/media/Phosphor-Duotone.ttf": "/static/media/Phosphor-Duotone.15861c32578891823ba7.ttf",
+    "static/media/Phosphor.woff": "/static/media/Phosphor.4ad759d499ef258d0315.woff",
+    "static/media/Phosphor.ttf": "/static/media/Phosphor.cb35b1f2186a5fa1b392.ttf",
+    "static/media/Phosphor-Fill.woff": "/static/media/Phosphor-Fill.4e7d6ef75dc6d008ffb4.woff",
+    "static/media/Phosphor-Fill.ttf": "/static/media/Phosphor-Fill.63a749a01b0be4cb2b3a.ttf",
+    "index.html": "/index.html",
+    "main.81e091ec.css.map": "/static/css/main.81e091ec.css.map",
+    "main.59b1e506.js.map": "/static/js/main.59b1e506.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81e091ec.css",
+    "static/js/main.59b1e506.js"
+  ]
+}
