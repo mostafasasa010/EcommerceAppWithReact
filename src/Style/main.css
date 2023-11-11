@@ -1006,9 +1006,12 @@ footer.main-footer .foot span {
   width: 50px;
 }
 
+.show-user h1 {
+  margin-bottom: 20px;
+}
 .show-user h3 {
   font-size: var(--big-size);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .show-user h3 span {
   color: var(--secondary-600);
@@ -1239,6 +1242,19 @@ form.add-category p {
   padding: 6px 8px;
   border-radius: 4px;
   font-weight: var(--bold-weight);
+}
+
+.edit-user-by-admin h1 {
+  margin-bottom: 20px;
+}
+.edit-user-by-admin > div label {
+  margin-right: 5px;
+}
+.edit-user-by-admin > div input {
+  padding: 10px 8px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
 }
 
 /*# sourceMappingURL=main.css.map */

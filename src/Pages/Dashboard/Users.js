@@ -53,7 +53,7 @@ function Users() {
             <Link onClick={() => handleDelete(user._id)}>
               <i className="ph ph-trash delete"></i>
             </Link>
-            <Link to={USERID}>
+            <Link to={`/dashboard/users/edit/${user._id}`}>
               <i className="ph ph-pencil edit"></i>
             </Link>
             <Link

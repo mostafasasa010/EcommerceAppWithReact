@@ -52,7 +52,8 @@ function ShowUser() {
   return (
     <>
       {loading && <Loading />}
-      <div className="show-user">
+      <div className="show-user main-section">
+        <h1>Show User</h1>
         <h3>
           <span>Name:</span> {name}
         </h3>

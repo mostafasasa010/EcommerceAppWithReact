@@ -14,6 +14,7 @@ import AddCategory from "./Pages/Dashboard/AddCategory";
 import AllCategory from "./Pages/Dashboard/AllCategory";
 import ShowProduct from "./Pages/Dashboard/ShowProduct";
 import AddProduct from "./Pages/Dashboard/AddProduct";
+import EditUserByAdmin from "./Pages/Dashboard/Edit UserByAdmin";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         </Route>
         <Route path="dashboard/" element={<Dashboard />}>
           <Route path="users" element={<Users />} />
+          <Route path="users/edit/:id" element={<EditUserByAdmin />} />
           <Route path="products" element={<Products />} />
           <Route path="addCategory" element={<AddCategory />} />
           <Route path="categories" element={<AllCategory />} />

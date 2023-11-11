@@ -1,7 +1,10 @@
 .show-user {
+  h1 {
+    margin-bottom: 20px;
+  }
   h3 {
     font-size: var(--big-size);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     span {
       color: var(--secondary-600);
     }

@@ -1,0 +1,16 @@
+.edit-user-by-admin {
+  h1 {
+    margin-bottom: 20px;
+  }
+  > div {
+    label {
+      margin-right: 5px;
+    }
+    input {
+      padding: 10px 8px;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+    }
+  }
+}
