@@ -14,7 +14,7 @@ import AddCategory from "./Pages/Dashboard/AddCategory";
 import AllCategory from "./Pages/Dashboard/AllCategory";
 import ShowProduct from "./Pages/Dashboard/ShowProduct";
 import AddProduct from "./Pages/Dashboard/AddProduct";
-import EditUserByAdmin from "./Pages/Dashboard/Edit UserByAdmin";
+import EditUserByAdmin from "./Pages/Dashboard/EditUserByAdmin";
 import ShowCategory from "./Pages/Dashboard/ShowCategory";
 
 function App() {
