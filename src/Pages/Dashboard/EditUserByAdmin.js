@@ -8,7 +8,6 @@ import Loading from "../../Components/Loading/Loading";
 function EditUserByAdmin() {
   const { id } = useParams();
   const [name, setName] = useState("");
-  const [fname, setFName] = useState("");
   const cookie = Cookie();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
@@ -21,7 +20,7 @@ function EditUserByAdmin() {
     });
     const data = res.data.data.data;
     setLoading(false);
-    setFName(data.name);
+    setName(data.name);
   }
 
   useEffect(() => {
@@ -54,8 +53,9 @@ function EditUserByAdmin() {
           <label htmlFor="name">Name:</label>
           <input
             id="name"
-            placeholder={fname}
             onChange={(e) => setName(e.target.value)}
+            value={name}
+            placeholder="User Name"
           />
         </div>
         <button className="btn" type="submit">

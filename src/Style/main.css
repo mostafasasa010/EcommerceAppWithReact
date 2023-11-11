@@ -1137,7 +1137,6 @@ form.add-category p {
   color: var(--gray-00);
   display: flex;
   flex-direction: column;
-  margin-bottom: 40px;
 }
 .show-product .re-cards .reviews {
   display: flex;
@@ -1175,16 +1174,19 @@ form.add-category p {
   margin-bottom: 10px;
 }
 
-.add-product h1 {
+.add-product h1,
+.edit-product h1 {
   color: var(--gray-900);
   text-align: center;
   margin-bottom: 20px;
 }
-.add-product > div {
+.add-product > div,
+.edit-product > div {
   display: flex;
   flex-direction: column;
 }
-.add-product > div label {
+.add-product > div label,
+.edit-product > div label {
   padding: 10px;
   margin-bottom: 5px;
   display: flex;
@@ -1194,11 +1196,13 @@ form.add-category p {
   max-width: 100%;
 }
 @media (max-width: 576px) {
-  .add-product > div label {
+  .add-product > div label,
+  .edit-product > div label {
     font-size: 12px;
   }
 }
-.add-product > div label input {
+.add-product > div label input,
+.edit-product > div label input {
   display: block;
   border: none;
   outline: none;
@@ -1206,37 +1210,45 @@ form.add-category p {
   border-radius: 4px;
   max-width: 100%;
 }
-.add-product > div label select {
+.add-product > div label select,
+.edit-product > div label select {
   display: block;
   border: none;
   outline: none;
   padding: 10px 8px;
   border-radius: 4px;
 }
-.add-product > div label select option {
+.add-product > div label select option,
+.edit-product > div label select option {
   border: none;
   outline: none;
 }
-.add-product > div label p {
+.add-product > div label p,
+.edit-product > div label p {
   margin-left: 20px;
   color: var(--danger-500);
 }
-.add-product > div > div {
+.add-product > div > div,
+.edit-product > div > div {
   display: flex;
   flex-wrap: wrap;
 }
-.add-product > div > div label.discount {
+.add-product > div > div label.discount,
+.edit-product > div > div label.discount {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
 }
-.add-product > div > div label.discount input {
+.add-product > div > div label.discount input,
+.edit-product > div > div label.discount input {
   margin: 0;
 }
-.add-product > div > div label.discount select {
+.add-product > div > div label.discount select,
+.edit-product > div > div label.discount select {
   margin: 0;
 }
-.add-product > div > div label span {
+.add-product > div > div label span,
+.edit-product > div > div label span {
   background-color: var(--primary-500);
   color: var(--gray-00);
   margin-left: 5px;

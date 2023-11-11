@@ -77,7 +77,7 @@ function ShowProduct() {
   return (
     <>
       {loading && <Loading />}
-      <div className="show-product">
+      <div className="show-product main-section">
         <div className="image">
           <img src={`${IMAGES}${PRODUCTS}${image}`} alt="Pic" />
         </div>

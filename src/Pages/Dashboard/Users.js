@@ -71,7 +71,7 @@ function Users() {
   return (
     <>
       {loading && <Loading />}
-      <div className="users">
+      <div className="users main-section">
         <table>
           <thead>
             <tr>

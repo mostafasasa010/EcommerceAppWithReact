@@ -56,6 +56,9 @@ function Products() {
             <Link onClick={() => handleDelete(product._id)}>
               <i className="ph ph-trash delete"></i>
             </Link>
+            <Link to={`/dashboard/products/edit/${product._id}`}>
+              <i className="ph ph-pencil edit"></i>
+            </Link>
             <Link to={`/dashboard/products/show/${product._id}`}>
               <i className="ph ph-eye show"></i>
             </Link>
@@ -68,7 +71,7 @@ function Products() {
   return (
     <>
       {loading && <Loading />}
-      <div className="products-dash">
+      <div className="products-dash main-section">
         <table>
           <thead>
             <tr>

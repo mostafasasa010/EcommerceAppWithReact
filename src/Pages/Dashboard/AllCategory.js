@@ -64,7 +64,7 @@ function AllCategory() {
   return (
     <>
       {loading && <Loading />}
-      <div className="categories-dash">
+      <div className="categories-dash main-section">
         <table>
           <thead>
             <tr>
