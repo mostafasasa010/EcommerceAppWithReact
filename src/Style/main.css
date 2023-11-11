@@ -1245,13 +1245,16 @@ form.add-category p {
   font-weight: var(--bold-weight);
 }
 
-.edit-user-by-admin h1 {
+.edit-user-by-admin h1,
+.edit-category h1 {
   margin-bottom: 20px;
 }
-.edit-user-by-admin > div label {
+.edit-user-by-admin > div label,
+.edit-category > div label {
   margin-right: 5px;
 }
-.edit-user-by-admin > div input {
+.edit-user-by-admin > div input,
+.edit-category > div input {
   padding: 10px 8px;
   border: none;
   outline: none;
