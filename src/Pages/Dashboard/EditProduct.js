@@ -49,6 +49,7 @@ function EditProduct() {
           Authorization: "Bearer " + cookie.get("cookieToken"),
         },
       });
+      console.log("patch", res);
       if ((res.status = 202)) {
         navigate(`/dashboard/products/show/${id}`);
       }
@@ -57,6 +58,7 @@ function EditProduct() {
   async function getProductData() {
     const res = await axios.get(`${BaseApi}${PRODUCTS}${id}`);
     const data = res.data.data.data;
+    console.log("get", res);
     setLoading(false);
     setCategory(data.category && data.category.name);
     setName(data.name);

@@ -18,11 +18,13 @@ import EditUserByAdmin from "./Pages/Dashboard/EditUserByAdmin";
 import ShowCategory from "./Pages/Dashboard/ShowCategory";
 import EditCategory from "./Pages/Dashboard/EditCategory";
 import EditProduct from "./Pages/Dashboard/EditProduct";
+import Err404 from "./Pages/Website/Err404";
 
 function App() {
   return (
     <div>
       <Routes>
+        <Route path="/*" element={<Err404 />} />
         <Route path="/" element={<HomePage />}>
           <Route path="cart" element={<CartPage />} />
           <Route path="fav" element={<FavPage />} />

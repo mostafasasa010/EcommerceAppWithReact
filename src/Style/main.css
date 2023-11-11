@@ -767,6 +767,39 @@ footer.main-footer .foot span {
   }
 }
 
+.err-404 {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 0 30px 20px;
+}
+.err-404 > div {
+  width: 400px;
+  text-align: center;
+}
+.err-404 > div img {
+  max-width: 100%;
+}
+.err-404 > div .err {
+  font-size: var(--biggest-size);
+  font-weight: var(--bold-weight);
+  margin-bottom: 10px;
+}
+.err-404 > div .disc {
+  font-size: var(--medium-size);
+  margin-bottom: 20px;
+  color: var(--gray-700);
+  line-height: 24px;
+}
+.err-404 > div button {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.err-404 > div button i {
+  margin-right: 5px;
+}
+
 .sign-up {
   width: 100%;
   padding-bottom: 40px;
