@@ -1262,10 +1262,17 @@ form.add-category p {
   margin-bottom: 20px;
 }
 .show-category .image {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .show-category .image img {
   width: 500px;
+}
+@media (max-width: 576px) {
+  .show-category .image img {
+    width: 250px;
+  }
 }
 .show-category > div:not(:first-of-type) {
   margin-top: 10px;
@@ -1273,11 +1280,21 @@ form.add-category p {
 .show-category > div:not(:first-of-type) span {
   font-size: var(--big-size);
 }
+@media (max-width: 576px) {
+  .show-category > div:not(:first-of-type) span {
+    font-size: var(--small-size);
+  }
+}
 .show-category > div:not(:first-of-type) span:not(:last-of-type) {
   color: var(--primary-600);
   font-weight: var(--bold-weight);
   font-size: var(--big-light-size);
   margin-right: 5px;
+}
+@media (max-width: 576px) {
+  .show-category > div:not(:first-of-type) span:not(:last-of-type) {
+    font-size: var(--medium-size);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

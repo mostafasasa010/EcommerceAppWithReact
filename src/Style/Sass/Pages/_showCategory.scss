@@ -3,20 +3,31 @@
     margin-bottom: 20px;
   }
   .image {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img {
       width: 500px;
+      @include small {
+        width: 250px;
+      }
     }
   }
   > div:not(:first-of-type) {
     margin-top: 10px;
     span {
       font-size: var(--big-size);
+      @include small {
+        font-size: var(--small-size);
+      }
       &:not(:last-of-type) {
         color: var(--primary-600);
         font-weight: var(--bold-weight);
         font-size: var(--big-light-size);
         margin-right: 5px;
+        @include small {
+          font-size: var(--medium-size);
+        }
       }
     }
   }
