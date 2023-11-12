@@ -6,7 +6,7 @@ function Logout() {
     window.location.pathname = "/";
   }
   return (
-    <button className="log-out" onClick={handleLogout}>
+    <button className="log-out btn-2" onClick={handleLogout}>
       Logout
     </button>
   );

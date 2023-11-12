@@ -911,7 +911,18 @@ footer.main-footer .foot span {
 }
 
 .user-page {
-  margin-top: 140px;
+  margin-top: 160px;
+}
+.user-page .container > div h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.user-page .container > div p {
+  font-size: var(--medium-extra-size);
+}
+.user-page .container > div p span {
+  font-size: var(--big-light-size);
+  font-weight: var(--bold-weight);
 }
 
 .dashboard {

@@ -21,7 +21,7 @@ function AddCategory() {
         },
       });
       if (res.status === 201) {
-        navigate("/dashboard/categories");
+        navigate(`/dashboard/categories/show/${res.data.data.data._id}`);
       }
     } catch (err) {
       if (err.response.status === 400) {

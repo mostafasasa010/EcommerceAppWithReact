@@ -19,6 +19,7 @@ import ShowCategory from "./Pages/Dashboard/ShowCategory";
 import EditCategory from "./Pages/Dashboard/EditCategory";
 import EditProduct from "./Pages/Dashboard/EditProduct";
 import Err404 from "./Pages/Website/Err404";
+import RequireRoute from "./Pages/Website/RequireRoute";
 
 function App() {
   return (
@@ -30,18 +31,20 @@ function App() {
           <Route path="fav" element={<FavPage />} />
           <Route path="user" element={<UserPage />} />
         </Route>
-        <Route path="dashboard/" element={<Dashboard />}>
-          <Route path="users" element={<Users />} />
-          <Route path="users/edit/:id" element={<EditUserByAdmin />} />
-          <Route path="products" element={<Products />} />
-          <Route path="addProduct" element={<AddProduct />} />
-          <Route path="products/show/:id" element={<ShowProduct />} />
-          <Route path="products/edit/:id" element={<EditProduct />} />
-          <Route path="addCategory" element={<AddCategory />} />
-          <Route path="categories" element={<AllCategory />} />
-          <Route path="categories/show/:id" element={<ShowCategory />} />
-          <Route path="categories/edit/:id" element={<EditCategory />} />
-          <Route path="users/show/:id" element={<ShowUser />} />
+        <Route element={<RequireRoute />}>
+          <Route path="dashboard/" element={<Dashboard />}>
+            <Route path="users" element={<Users />} />
+            <Route path="users/edit/:id" element={<EditUserByAdmin />} />
+            <Route path="products" element={<Products />} />
+            <Route path="addProduct" element={<AddProduct />} />
+            <Route path="products/show/:id" element={<ShowProduct />} />
+            <Route path="products/edit/:id" element={<EditProduct />} />
+            <Route path="addCategory" element={<AddCategory />} />
+            <Route path="categories" element={<AllCategory />} />
+            <Route path="categories/show/:id" element={<ShowCategory />} />
+            <Route path="categories/edit/:id" element={<EditCategory />} />
+            <Route path="users/show/:id" element={<ShowUser />} />
+          </Route>
         </Route>
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookie from "cookie-universal";
+import Logout from "./Auth/Logout";
 
 function UserPage() {
   const cookie = Cookie();
@@ -12,18 +13,19 @@ function UserPage() {
   }, []);
   return (
     <div className="user-page">
-      <h1>User Page</h1>
-      {cookie.get("cookieName") && cookie.get("cookieRole") === "user" ? (
-        <p>{cookie.get("cookieName")}</p>
-      ) : cookie.get("cookieName") === "" &&
-        cookie.get("cookieRole") === "user" ? (
-        <p>User</p>
-      ) : cookie.get("cookieName") === "" &&
-        cookie.get("cookieRole") === "admin" ? (
-        <p>Admin</p>
-      ) : (
-        <p>{cookie.get("cookieName")}</p>
-      )}
+      <div className="container">
+        <div className="main-section">
+          {cookie.get("cookieRole") === "admin" ? (
+            <h1>Admin Page</h1>
+          ) : (
+            <h1>User Page</h1>
+          )}
+          <p>
+            Hello, <span>{cookie.get("cookieName")}</span>
+          </p>
+          {cookie.get("cookieToken") && <Logout />}
+        </div>
+      </div>
     </div>
   );
 }

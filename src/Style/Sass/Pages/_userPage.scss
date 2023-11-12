@@ -1,3 +1,18 @@
 .user-page {
-  margin-top: 140px;
+  margin-top: 160px;
+  .container {
+    > div {
+      h1 {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: var(--medium-extra-size);
+        span {
+          font-size: var(--big-light-size);
+          font-weight: var(--bold-weight);
+        }
+      }
+    }
+  }
 }
