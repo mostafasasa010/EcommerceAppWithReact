@@ -9,9 +9,14 @@
     border-collapse: collapse;
     table-layout: fixed;
     overflow: hidden;
-    tr:nth-child(even) {
-      background-color: rgb(255 231 214 / 50%);
+    tr {
+      transition: 0.3s;
+      &:nth-child(even),
+      &:hover {
+        background-color: rgb(255 231 214 / 50%);
+      }
     }
+
     th,
     td {
       padding: 12px;

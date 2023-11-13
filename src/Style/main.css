@@ -957,9 +957,16 @@ footer.main-footer .foot span {
   table-layout: fixed;
   overflow: hidden;
 }
-.users table tr:nth-child(even),
+.users table tr,
+.products-dash table tr,
+.categories-dash table tr {
+  transition: 0.3s;
+}
+.users table tr:nth-child(even), .users table tr:hover,
 .products-dash table tr:nth-child(even),
-.categories-dash table tr:nth-child(even) {
+.products-dash table tr:hover,
+.categories-dash table tr:nth-child(even),
+.categories-dash table tr:hover {
   background-color: rgba(255, 231, 214, 0.5);
 }
 .users table th,

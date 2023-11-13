@@ -8,8 +8,10 @@ import axios from "axios";
 function Users() {
   const [usersData, setUsersData] = useState([]);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [noUsers, setNoUsers] = useState(false);
   const cookie = Cookie();
   const [loading, setLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState("");
   async function api() {
     try {
       const response = await fetch(`${BaseApi}${USER}`, {
@@ -20,6 +22,7 @@ function Users() {
       const data = await response.json();
       setUsersData(data.data.data);
       setLoading(false);
+      setNoUsers(true);
     } catch (err) {
       console.log(err);
     }
@@ -27,18 +30,29 @@ function Users() {
   useEffect(() => {
     api();
   }, [isDeleted]);
-  async function handleDelete(id) {
-    try {
-      const res = await axios.delete(`${BaseApi}${USER}${id}`, {
+  useEffect(() => {
+    axios
+      .get(`${BaseApi}${USER}${USERID}`, {
         headers: {
           Authorization: "Bearer " + cookie.get("cookieToken"),
         },
-      });
-      if (res.status === 204) {
-        setIsDeleted(!isDeleted);
+      })
+      .then((res) => setCurrentUser(res.data.data.data));
+  }, []);
+  async function handleDelete(id) {
+    if (currentUser._id !== id) {
+      try {
+        const res = await axios.delete(`${BaseApi}${USER}${id}`, {
+          headers: {
+            Authorization: "Bearer " + cookie.get("cookieToken"),
+          },
+        });
+        if (res.status === 204) {
+          setIsDeleted(!isDeleted);
+        }
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log(err);
     }
   }
   function writeName() {
@@ -46,13 +60,15 @@ function Users() {
       return usersData.map((user, i) => (
         <tr key={i}>
           <td>{i + 1}</td>
-          <td>{user.name}</td>
+          <td>{user.name === currentUser.name && user.name + " (You)"}</td>
           <td>{user.email}</td>
           <td>{user.role}</td>
           <td>
-            <Link onClick={() => handleDelete(user._id)}>
-              <i className="ph ph-trash delete"></i>
-            </Link>
+            {currentUser._id !== user._id && (
+              <Link onClick={() => handleDelete(user._id)}>
+                <i className="ph ph-trash delete"></i>
+              </Link>
+            )}
             <Link to={`/dashboard/users/edit/${user._id}`}>
               <i className="ph ph-pencil edit"></i>
             </Link>
@@ -82,7 +98,19 @@ function Users() {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>{writeName()}</tbody>
+          <tbody>
+            {usersData.length === 0 ? (
+              <tr>
+                <td>Loading</td>
+              </tr>
+            ) : usersData.length === 0 && noUsers ? (
+              <tr>
+                <td>Users Not Found</td>
+              </tr>
+            ) : (
+              writeName()
+            )}
+          </tbody>
         </table>
       </div>
     </>

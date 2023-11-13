@@ -20,6 +20,7 @@ import EditCategory from "./Pages/Dashboard/EditCategory";
 import EditProduct from "./Pages/Dashboard/EditProduct";
 import Err404 from "./Pages/Website/Err404";
 import RequireRoute from "./Pages/Website/RequireRoute";
+import RequireBack from "./Pages/RequireBack";
 
 function App() {
   return (
@@ -46,8 +47,10 @@ function App() {
             <Route path="users/show/:id" element={<ShowUser />} />
           </Route>
         </Route>
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route element={<RequireBack />}>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
       </Routes>
     </div>
   );
