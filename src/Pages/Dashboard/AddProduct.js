@@ -18,7 +18,7 @@ function AddProduct() {
   const navigate = useNavigate();
   const [msgError, setMsgError] = useState(false);
   const [send, setSend] = useState(false);
-  console.log(image.name);
+  console.log(image);
   useEffect(() => {
     if (name.length > 0 && category !== "" && originalP > 0) {
       setSend(true);
@@ -44,16 +44,13 @@ function AddProduct() {
   async function handleSubmit(e) {
     e.preventDefault();
     setMsgError(true);
-    const data = {
-      name: name,
-      price: {
-        originalPrice: originalP,
-        discount: discountP,
-      },
-      inStock: stock,
-      brand: brand,
-      image: image.name,
-    };
+    const data = new FormData();
+    data.append("name", name);
+    data.append("price[originalPrice]", originalP);
+    data.append("price[discount]", discountP);
+    data.append("inStock", stock);
+    data.append("brand", brand);
+    data.append("image", image);
     if (send) {
       const res = await axios.post(
         `${BaseApi}${CATEGORY}${category}/${PRODUCTS}`,

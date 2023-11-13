@@ -20,6 +20,8 @@ function EditProduct() {
   const [msgError, setMsgError] = useState(false);
   const [send, setSend] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [image, setImage] = useState("");
+  console.log(image);
   useEffect(() => {
     if (name.length > 0 && category !== "" && originalP > 0) {
       setSend(true);
@@ -30,18 +32,17 @@ function EditProduct() {
       setCategory("");
     }
   }, [name, category, originalP]);
+
   async function patchData(e) {
     e.preventDefault();
     setMsgError(true);
-    const data = {
-      name: name,
-      price: {
-        originalPrice: originalP,
-        discount: discountP,
-      },
-      inStock: stock,
-      brand: brand,
-    };
+    const data = new FormData();
+    data.append("name", name);
+    data.append("price[originalPrice]", originalP);
+    data.append("price[discount]", discountP);
+    data.append("inStock", stock);
+    data.append("brand", brand);
+    data.append("image", image);
     if (send) {
       const res = await axios.patch(`${BaseApi}${PRODUCTS}${id}`, data, {
         headers: {
@@ -187,6 +188,13 @@ function EditProduct() {
               </span>
             </label>
           </div>
+          <label htmlFor="image">
+            Image:
+            <input
+              type="file"
+              onChange={(e) => setImage(e.target.files.item(0))}
+            />
+          </label>
         </div>
         <button className="btn" type="submit" onClick={() => setMsgError(true)}>
           Edit

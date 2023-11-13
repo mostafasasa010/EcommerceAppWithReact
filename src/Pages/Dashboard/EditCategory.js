@@ -11,6 +11,7 @@ function EditCategory() {
   const cookie = Cookie();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [image, setImage] = useState("");
 
   async function getCategoryName() {
     const res = await axios.get(`${BaseApi}${CATEGORY}${id}`, {
@@ -29,9 +30,9 @@ function EditCategory() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const data = {
-      name: name,
-    };
+    const data = new FormData();
+    data.append("name", name);
+    data.append("image", image);
     if (name !== "") {
       const res = await axios.patch(`${BaseApi}${CATEGORY}${id}`, data, {
         headers: {
@@ -58,6 +59,13 @@ function EditCategory() {
             placeholder="Category Name"
           />
         </div>
+        <label htmlFor="image">
+          Image:
+          <input
+            type="file"
+            onChange={(e) => setImage(e.target.files.item(0))}
+          />
+        </label>
         <button className="btn" type="submit">
           Edit
         </button>

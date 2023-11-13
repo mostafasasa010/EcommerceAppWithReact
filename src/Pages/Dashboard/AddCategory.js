@@ -7,13 +7,14 @@ import { useNavigate } from "react-router-dom";
 function AddCategory() {
   const [errorMessage, setErrorMessage] = useState("");
   const [name, setName] = useState("");
+  const [image, setImage] = useState("");
   const navigate = useNavigate();
   const cookie = Cookie();
   async function handleSubmit(e) {
     e.preventDefault();
-    const data = {
-      name: name,
-    };
+    const data = new FormData();
+    data.append("name", name);
+    data.append("image", image);
     try {
       const res = await axios.post(`${BaseApi}${CATEGORY}`, data, {
         headers: {
@@ -42,6 +43,8 @@ function AddCategory() {
         onChange={(e) => setName(e.target.value)}
       />
       {errorMessage && <p>{errorMessage}</p>}
+      <label htmlFor="image">Image:</label>
+      <input type="file" onChange={(e) => setImage(e.target.files.item(0))} />
       <button className="btn" type="submit">
         Add
       </button>
