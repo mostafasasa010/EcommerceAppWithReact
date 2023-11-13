@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { BaseApi, CATEGORY, USER } from "../../API/Api";
+import { BaseApi, CATEGORY } from "../../API/Api";
 import Cookie from "cookie-universal";
 import Loading from "../../Components/Loading/Loading";
 
