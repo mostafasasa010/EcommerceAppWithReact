@@ -13,10 +13,12 @@ function AddProduct() {
   const [brand, setBrand] = useState("");
   const [name, setName] = useState("");
   const [stock, setStock] = useState(0);
+  const [image, setImage] = useState("");
   const cookie = Cookie();
   const navigate = useNavigate();
   const [msgError, setMsgError] = useState(false);
   const [send, setSend] = useState(false);
+  console.log(image.name);
   useEffect(() => {
     if (name.length > 0 && category !== "" && originalP > 0) {
       setSend(true);
@@ -50,6 +52,7 @@ function AddProduct() {
       },
       inStock: stock,
       brand: brand,
+      image: image.name,
     };
     if (send) {
       const res = await axios.post(
@@ -158,6 +161,13 @@ function AddProduct() {
             </span>
           </label>
         </div>
+        <label htmlFor="image">
+          Image:
+          <input
+            type="file"
+            onChange={(e) => setImage(e.target.files.item(0))}
+          />
+        </label>
       </div>
       <button className="btn" type="submit" onClick={() => setMsgError(true)}>
         Add
